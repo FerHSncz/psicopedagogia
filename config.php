@@ -1,9 +1,9 @@
 <?php
    // Configuración de la BD    
    $hostname = "localhost"; 
-   $username = "id20386295_alumnos"; 
-   $password = "Proyecto@9"; 
-   $dbname   = "id20386295_proyecto";
+   $username = "root"; 
+   $password = ""; 
+   $dbname   = "psicopedagogia";
     
    // Crear conexión a la BD  
    $con = new mysqli($hostname, $username, $password, $dbname); 
