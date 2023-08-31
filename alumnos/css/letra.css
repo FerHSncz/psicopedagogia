@@ -1,0 +1,13 @@
+h1, strong{
+	font-family: Arial Black;
+}
+
+p{
+	font-family: Franklin Gothic;
+	font-size: 19px;
+}
+
+select, option{
+	font-family: Franklin Gothic;
+	font-size: 18px;
+}
