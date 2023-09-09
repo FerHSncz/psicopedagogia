@@ -1,9 +1,7 @@
 <?php
     session_start();
     include '../config.php'; 
-    
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
-
 ?>
 
 <!DOCTYPE html>

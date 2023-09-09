@@ -30,19 +30,6 @@
         <div>
             <form method="POST">
                 <div class="">
-                    <!-- row <input type="submit" value="Siguiente" name="registro"> 
-                    <div class="col-lg-6" style="margin: 0 auto;">
-                        <P>Nombre</P>
-                        <div class="form-group">
-                            <input type="text" class="form-control mt-2" name="nombre" placeholder="Ingrese aqui su nombre">
-                        </div>
-                    </div>
-                    <div class="col-lg-6" style="margin: 0 auto;">
-                        <P>Matricula</P>
-                        <div class="form-group">
-                            <input type="number" class="form-control mt-2" name="matricula" placeholder="Ingrese aqui su matricula">
-                        </div>
-                    </div> -->
                     <div class="col-lg-6" style="margin: 0 auto;">
                         <P>1. ¿Cuál de las siguientes actividades disfrutas más?</P>
                         <div class="form-group">
@@ -491,12 +478,10 @@
                     <div class="col-lg-2" style="margin: 0 auto; padding: -12px;">
                         <button type="submit" name="registrar" class="btn btn-success"><a href="pnl.php"></a>Finalizar</button>
                     </div>
-                   <!-- <a href="ver-pnl.php">respuestas</a> -->
                 </div>
             </form>
         </div>
     </div>
     <br>
 </body>
-
 </html>

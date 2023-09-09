@@ -6,7 +6,7 @@
     if (!isset($_SESSION['email'])) {
     header("location: index.php");
     exit();
-  }
+}
 
     // Consulta SQL para obtener los datos de la tabla test1.
     $sql = "SELECT p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50, p51, p52, p53, p54, p55, p56, p57, p58, p59, p60, p61, p62, p63, p64, p65, p66, p67, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80 FROM honey";
@@ -48,23 +48,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        
-        
-        
-        
-        
-        
-        
-
-  
-
-
-            
-            
-            
-            
-            
-            
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -130,9 +113,9 @@
                         <div class="row">
                         <div class="container">
                             <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje Cuestionario Honey-Alonso.</strong></div>         <head>
-       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                                     <html>
-                                      <head>
+                                    <head>
                                         <title>Resultados Finales</title>
                                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                     
@@ -176,7 +159,7 @@
                                     
                                                 maintainAspectRatio: true,
                                                 spanGaps: false,
-                                                 scales: {
+                                                scales: {
                                                         r: {
                                                             beginAtZero: true,
                                                             stepSize: 0.01
@@ -201,10 +184,10 @@
                                     </script>
                                     </head>
                                     </html>
-  </head>
-  <body>
+</head>
+<body>
     <div id="curve_chart" style="width: 900px; height: 400px"></div>
-  </body               
+</body               
                             <!-- Div para la gráfica de pastel -->
                             <div id="piechart_3d" style="width: 900px; height: 50px;"></div>
                         

@@ -1,9 +1,7 @@
 <?php
     session_start();
     include '../config.php'; 
-  	
-  	/*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
-
+	/*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
 ?>
 
 <!DOCTYPE html>
@@ -23,23 +21,23 @@
 	<body>
 		<!-- Barra de navegación -->
 		<nav class="navbar navbar-light bg-light">
-	    <a class="navbar-brand" href="index.php"><strong style="color: red;"></strong></a>
-		     <ul class="navbar-nav ml-auto">
-		        <li class="nav-item active">
-		          <a class="nav-link" href="ver.php"><strong></strong></a>
-		        </li>
-		     </ul>
-	  	</nav>
-	  	<!-- Fin de la Barra de navegación -->
+		<a class="navbar-brand" href="index.php"><strong style="color: red;"></strong></a>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="ver.php"><strong></strong></a>
+				</li>
+			</ul>
+		</nav>
+		<!-- Fin de la Barra de navegación -->
 
-	  	<!-- Inicio de Formulario -->
-	  	<h1 align="center" style="padding: 0px;"><strong></strong></h1>
+		<!-- Inicio de Formulario -->
+		<h1 align="center" style="padding: 0px;"><strong></strong></h1>
 
-	  	<div class="container">
-              <img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
-      	</div>      	
+		<div class="container">
+            <img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
+		</div>      	
 
-	 	 <div class="container mt-2">
+		<div class="container mt-2">
 				<form id="formulario" action="respuestas.php" method="POST" autocomplete="off">
 					<div class=""> <!-- row <input type="submit" value="Siguiente" name="registro">-->
 						
@@ -838,10 +836,10 @@
 		<script>
 		function actualizarProgreso() {
 			var preguntasRespondidas = document.querySelectorAll('input[type="radio"]:checked').length;
-		    var progressBar = document.getElementById('progress-bar');
+			var progressBar = document.getElementById('progress-bar');
 		    var porcentajeCompletado = (preguntasRespondidas / 36) * 100;
-		    progressBar.style.width = porcentajeCompletado + "%";
-		    progressBar.innerHTML = "Faltan " + (36 - preguntasRespondidas) + " oraciones";
+			progressBar.style.width = porcentajeCompletado + "%";
+			progressBar.innerHTML = "Faltan " + (36 - preguntasRespondidas) + " oraciones";
 		}
 		</script>
 	</body>

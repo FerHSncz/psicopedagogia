@@ -6,7 +6,7 @@
     if (!isset($_SESSION['email'])) {
     header("location: index.php");
     exit();
-  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -101,31 +101,30 @@
                                 </thead>
                             </table>
                         </div>
-                              <!-- Procesos del DataTables) -->
-                              <!-- jQuery (colocar antes del script de DataTables) -->
-                              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                              <!-- DataTables JS -->
-                              <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-                              <!-- DataTables JS para la paginacion-->
-                              <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+                            <!-- Procesos del DataTables) -->
+                            <!-- jQuery (colocar antes del script de DataTables) -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                            <!-- DataTables JS -->
+                            <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+                            <!-- DataTables JS para la paginacion-->
+                            <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 
 
-                              <!-- Script de datos de alumnos -->
-                              <script>
+                            <!-- Script de datos de alumnos -->
+                            <script>
                                 $(document).ready(function() {
                                   // Inicializar la tabla
-                                  $('#tablaPsicologos').DataTable({
+                                $('#tablaPsicologos').DataTable({
                                     "ajax": "get_psicologos.php", // Ruta al archivo PHP que obtiene los datos de los alumnos
                                     "columns": [
-                                      { "data": "id" },
-                                      { "data": "nombre" },
-                                       { "data": "email" },
-                                      { "data": "telefono" }                                                             
+                                        { "data": "id" },
+                                        { "data": "nombre" },
+                                        { "data": "email" },
+                                        { "data": "telefono" }                                                             
                                     ]
-                                  });
                                 });
-                              </script>
-                                                                           
+                                });
+                            </script>
                         </div>
                         <br>
                         

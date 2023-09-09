@@ -6,7 +6,7 @@
     if (!isset($_SESSION['email'])) {
     header("location: index.php");
     exit();
-  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -121,16 +121,16 @@
                                     // Realizar el while por cada categoria segun los valores a sumar
                                     while ($mostrar = mysqli_fetch_array($result)) {
                                         $visualSum = $mostrar['p1'] + $mostrar['p5'] + $mostrar['p9'] + $mostrar['p10'] + $mostrar['p11'] +
-                                                     $mostrar['p16'] + $mostrar['p17'] + $mostrar['p22'] + $mostrar['p26'] + $mostrar['p27'] +
-                                                     $mostrar['p32'] + $mostrar['p36'];
+                                                    $mostrar['p16'] + $mostrar['p17'] + $mostrar['p22'] + $mostrar['p26'] + $mostrar['p27'] +
+                                                    $mostrar['p32'] + $mostrar['p36'];
 
                                         $auditivoSum = $mostrar['p2'] + $mostrar['p3'] + $mostrar['p12'] + $mostrar['p13'] + $mostrar['p15'] +
-                                                       $mostrar['p19'] + $mostrar['p20'] + $mostrar['p23'] + $mostrar['p24'] + $mostrar['p28'] +
-                                                       $mostrar['p29'] + $mostrar['p33'];
+                                                    $mostrar['p19'] + $mostrar['p20'] + $mostrar['p23'] + $mostrar['p24'] + $mostrar['p28'] +
+                                                    $mostrar['p29'] + $mostrar['p33'];
 
                                         $kinestesicoSum = $mostrar['p4'] + $mostrar['p6'] + $mostrar['p7'] + $mostrar['p8'] + $mostrar['p14'] +
-                                                          $mostrar['p18'] + $mostrar['p21'] + $mostrar['p25'] + $mostrar['p30'] + $mostrar['p31'] +
-                                                          $mostrar['p34'] + $mostrar['p35'];
+                                                        $mostrar['p18'] + $mostrar['p21'] + $mostrar['p25'] + $mostrar['p30'] + $mostrar['p31'] +
+                                                        $mostrar['p34'] + $mostrar['p35'];
                                         ?>
 
                                         <!-- Impresion del while de cada categoria -->
@@ -179,44 +179,44 @@
                         <!-- API de Google Charts  -->
                         <script src="https://www.gstatic.com/charts/loader.js"></script>
                         <script>
-                          google.charts.load('current', {'packages':['corechart']});
-                          google.charts.setOnLoadCallback(drawCharts);
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawCharts);
 
-                          function drawCharts() {
+                        function drawCharts() {
                             <?php
                             // Restablecer el puntero del resultado de la consulta al principio
                             mysqli_data_seek($result, 0);
 
                             while ($mostrar = mysqli_fetch_array($result)) {
                               // Extraer datos para la fila actual
-                              $visualSum = $mostrar['p1'] + $mostrar['p5'] + $mostrar['p9'] + $mostrar['p10'] + $mostrar['p11'] +
-                                           $mostrar['p16'] + $mostrar['p17'] + $mostrar['p22'] + $mostrar['p26'] + $mostrar['p27'] +
-                                           $mostrar['p32'] + $mostrar['p36'];
+                            $visualSum = $mostrar['p1'] + $mostrar['p5'] + $mostrar['p9'] + $mostrar['p10'] + $mostrar['p11'] +
+                                        $mostrar['p16'] + $mostrar['p17'] + $mostrar['p22'] + $mostrar['p26'] + $mostrar['p27'] +
+                                        $mostrar['p32'] + $mostrar['p36'];
 
-                              $auditivoSum = $mostrar['p2'] + $mostrar['p3'] + $mostrar['p12'] + $mostrar['p13'] + $mostrar['p15'] +
-                                             $mostrar['p19'] + $mostrar['p20'] + $mostrar['p23'] + $mostrar['p24'] + $mostrar['p28'] +
-                                             $mostrar['p29'] + $mostrar['p33'];
+                            $auditivoSum = $mostrar['p2'] + $mostrar['p3'] + $mostrar['p12'] + $mostrar['p13'] + $mostrar['p15'] +
+                                            $mostrar['p19'] + $mostrar['p20'] + $mostrar['p23'] + $mostrar['p24'] + $mostrar['p28'] +
+                                            $mostrar['p29'] + $mostrar['p33'];
 
-                              $kinestesicoSum = $mostrar['p4'] + $mostrar['p6'] + $mostrar['p7'] + $mostrar['p8'] + $mostrar['p14'] +
+                            $kinestesicoSum = $mostrar['p4'] + $mostrar['p6'] + $mostrar['p7'] + $mostrar['p8'] + $mostrar['p14'] +
                                                 $mostrar['p18'] + $mostrar['p21'] + $mostrar['p25'] + $mostrar['p30'] + $mostrar['p31'] +
                                                 $mostrar['p34'] + $mostrar['p35'];
 
                               // Crear un array para los datos del gráfico
-                              $chartData = array(
+                            $chartData = array(
                                 array('Tipo', 'Cantidad'),
                                 array('Visual', $visualSum),
                                 array('Auditivo', $auditivoSum),
                                 array('Kinestesico', $kinestesicoSum)
-                              );
+                            );
 
                               // Convertir el array de PHP en un array de JavaScript usando json_encode
-                              $chartDataJson = json_encode($chartData);
+                            $chartDataJson = json_encode($chartData);
                             ?>
                             
                             var data<?php echo $mostrar['id']; ?> = google.visualization.arrayToDataTable(<?php echo $chartDataJson; ?>);
                             var options<?php echo $mostrar['id']; ?> = {
-                              title: 'Tipo de Aprendizaje',
-                              is3D: true,
+                                title: 'Tipo de Aprendizaje',
+                                is3D: true,
                             };
 
                             var chart<?php echo $mostrar['id']; ?> = new google.visualization.PieChart(document.getElementById('chart_div<?php echo $mostrar['id']; ?>'));
@@ -225,7 +225,7 @@
                             <?php
                             }
                             ?>
-                          }
+                        }
                         </script>                                                                   
                         </div>
                         

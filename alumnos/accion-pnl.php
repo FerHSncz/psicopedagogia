@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-  <html lang="es">
+<html lang="es">
     <head>
-      <title>Test PNL</title>
-      <!-- Required meta tags -->
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Test PNL</title>
+    
+	<!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     </head>
     <body>
-      <div class="container">
-    
-
+    <div class="container">
 <?php
 session_start();
  // Obtener el nombre del usuario desde la variable de sesión
@@ -65,13 +64,12 @@ session_start();
 			$consulta = "INSERT INTO pnl(nombre, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40) VALUES('$nombreUsuario', '$p1', '$p2',  '$p3', '$p4', '$p5', '$p6', '$p7', '$p8', '$p9', '$p10', '$p11', '$p12', '$p13', '$p14', '$p15', '$p16', '$p17', '$p18', '$p19', '$p20', '$p21', '$p22', '$p23', '$p24', '$p25', '$p26', '$p27', '$p28', '$p29', '$p30', '$p31', '$p32', '$p33', '$p34', '$p35', '$p36', '$p37', '$p38', '$p39', '$p40')";
 			$resultado = mysqli_query($con, $consulta);
                             if ($resultado==true) {
-              echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
-              echo "<script>window.location.href = 'dash_alumno.php';</script>";           
-              die();
+            echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
+            echo "<script>window.location.href = 'dash_alumno.php';</script>";           
+            die();
             }else{
-              echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";
-              echo "<script>window.location.href = 'dash_alumno.php';</script>";
+            echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";
+            echo "<script>window.location.href = 'dash_alumno.php';</script>";
             }   
 			    }
-		    	 
 	    ?>

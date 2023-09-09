@@ -6,7 +6,7 @@
     if (!isset($_SESSION['email'])) {
     header("location: index.php");
     exit();
-  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -179,17 +179,17 @@
                         <!-- API de Google Charts  -->
                         <script src="https://www.gstatic.com/charts/loader.js"></script>
                         <script>
-                          google.charts.load('current', {'packages':['corechart']});
-                          google.charts.setOnLoadCallback(drawCharts);
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawCharts);
 
-                          function drawCharts() {
+                        function drawCharts() {
                             <?php
                             // Restablecer el puntero del resultado de la consulta al principio
                             mysqli_data_seek($result, 0);
 
                             while ($mostrar = mysqli_fetch_array($result)) {
                               // Extraer datos para la fila actual
-                                         $activoSum = $mostrar['p3'] + $mostrar['p5'] + $mostrar['p7'] + $mostrar['p9'] + $mostrar['p13'] + $mostrar['p20'] + $mostrar['p26'] + $mostrar['p27'] + $mostrar['p35'] + $mostrar['p37'] + $mostrar['p41'] + $mostrar['p43'] + $mostrar['p46'] + $mostrar['p48'] + $mostrar['p51'] + $mostrar['p61'] + $mostrar['p67'] + $mostrar['p74'] + $mostrar['p75'] + $mostrar['p77'];
+                                        $activoSum = $mostrar['p3'] + $mostrar['p5'] + $mostrar['p7'] + $mostrar['p9'] + $mostrar['p13'] + $mostrar['p20'] + $mostrar['p26'] + $mostrar['p27'] + $mostrar['p35'] + $mostrar['p37'] + $mostrar['p41'] + $mostrar['p43'] + $mostrar['p46'] + $mostrar['p48'] + $mostrar['p51'] + $mostrar['p61'] + $mostrar['p67'] + $mostrar['p74'] + $mostrar['p75'] + $mostrar['p77'];
 
                                         $reflexivoSum = $mostrar['p10'] + $mostrar['p16'] + $mostrar['p18'] + $mostrar['p19'] + $mostrar['p28'] + $mostrar['p31'] + $mostrar['p32'] + $mostrar['p34'] + $mostrar['p36'] + $mostrar['p42'] + $mostrar['p44'] + $mostrar['p49']+ $mostrar['p55'] + $mostrar['p58'] + $mostrar['p63'] + $mostrar['p65'] + $mostrar['p69'] + $mostrar['p70'] + $mostrar['p79'];
 
@@ -198,22 +198,22 @@
                                         $pragmaticoSum = $mostrar['p1'] + $mostrar['p8'] + $mostrar['p12'] + $mostrar['p14'] + $mostrar['p22'] + $mostrar['p24'] + $mostrar['p30'] + $mostrar['p38'] + $mostrar['p40'] + $mostrar['p47'] + $mostrar['p52'] + $mostrar['p53'] + $mostrar['p56'] + $mostrar['p57'] + $mostrar['p59'] + $mostrar['p62'] + $mostrar['p68'] + $mostrar['p72'] + $mostrar['p73'] + $mostrar['p76'];
 
                               // Crear un array para los datos del gráfico
-                              $chartData = array(
+                            $chartData = array(
                                 array('Tipo', 'Cantidad'),
                                 array('Activo', $activoSum),
                                 array('Reflexivo', $reflexivoSum),
                                 array('Teorico', $teoricoSum),
                                 array('Pragmatico', $pragmaticoSum)
-                              );
+                            );
 
                               // Convertir el array de PHP en un array de JavaScript usando json_encode
-                              $chartDataJson = json_encode($chartData);
+                            $chartDataJson = json_encode($chartData);
                             ?>
                             
                             var data<?php echo $mostrar['id']; ?> = google.visualization.arrayToDataTable(<?php echo $chartDataJson; ?>);
                             var options<?php echo $mostrar['id']; ?> = {
-                              title: 'Tipo de Aprendizaje',
-                              is3D: true,
+                                title: 'Tipo de Aprendizaje',
+                                is3D: true,
                             };
 
                             var chart<?php echo $mostrar['id']; ?> = new google.visualization.LineChart(document.getElementById('chart_div<?php echo $mostrar['id']; ?>'));
@@ -222,7 +222,7 @@
                             <?php
                             }
                             ?>
-                          }
+                        }
                         </script>                                                                   
                         </div>
                         

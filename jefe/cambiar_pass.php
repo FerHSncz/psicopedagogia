@@ -6,7 +6,7 @@
     if (!isset($_SESSION['email'])) {
     header("location: index.php");
     exit();
-  }
+}
 
 // Función para cifrar la contraseña usando password_hash()
 function encryptPassword($password) {
