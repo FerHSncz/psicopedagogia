@@ -1,5 +1,5 @@
 {
-  "name": "PWA-App", // installation name
+  "name": "Psicopedagogia", // installation name
   "short_name": "PWA", // app title name
   "start_url": ".",
   "theme_color": "#4287f5",
