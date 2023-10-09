@@ -21,12 +21,12 @@
 	<body>
 		<!-- Barra de navegación -->
 		<nav class="navbar navbar-light bg-light">
-	    <a class="navbar-brand" href="index.php"><strong style="color: red;"></strong></a>
-		    <ul class="navbar-nav ml-auto">
-		        <li class="nav-item active">
-		        	<a class="nav-link" href="ver.php"><strong></strong></a>
-		        </li>
-		    </ul>
+		<a class="navbar-brand" href="index.php"><strong style="color: red;"></strong></a>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="ver.php"><strong></strong></a>
+				</li>
+			</ul>
 		</nav>
 		<!-- Fin de la Barra de navegación -->
 
@@ -34,138 +34,98 @@
 		<h1 align="center" style="padding: 0px;"><strong></strong></h1>
 
 		<div class="container">
-        	<img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
+			<img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
 		</div>      	
 
 		<div class="container mt-2">
 				<form id="formulario" action="accion-test3.php" method="POST" autocomplete="off">
 					<div class=""> <!-- row <input type="submit" value="Siguiente" name="registro">-->
-						
-									<style>
-										table tr:hover{
-											background-color: #bbd6ef !important;
-										}
-									</style>
-									
-									<table width="100%" name="aprendizaje" class="table table-striped table-bordered table-hover">
-
-										<thead>
-											<tr>
-											
-											<center><b><legend><strong>Cuestionario HONEY-ALONSO de ESTILOS DE APRENDIZAJE</strong></legend></b></center>
-											<center><b><h5><strong>Instrucciones para responder al cuestionario:</strong></h5></b></center>
-
-												<center><p> Si estás más de acuerdo que en desacuerdo con la sentencia pon un <b>signo 
-													más (+), </b></p>
-												<p>	Si, por el contrario, estás más en desacuerdo que de acuerdo, pon un <b>signo 
-													menos (-).</b></p></center>
-											</tr>
-											<div class="progress">
-												<div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="36" style="width: 0%">							    
-												</div> 
-											</div>
-											<br>
-										</thead>
-	
-											<tr class="odd" id="row_0">
-												<td>
-													1. Tengo fama de decir lo que pienso claramente y sin rodeos. 
-						
-												</td>
-												<td>
-													+ <input type="radio" name="p1" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p1" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
-
-
-											<tr class="odd" id="row_0">
-												<td>
-													2. Estoy seguro/a de lo que es bueno y lo que es malo, lo que está bien y lo  
-												</td>
-												<td>
-													+ <input type="radio" name="p2" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p2" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
-
-
-											<tr class="odd" id="row_0">
-												<td>
-													3. Muchas veces actúo sin mirar las consecuencias.
-												</td>
-												<td>
-													+ <input type="radio" name="p3" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p3" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
-
-											<tr class="odd" id="row_0">
-												<td>
-													  4. Normalmente trato de resolver los problemas metódicamente y paso a 
- 														paso.
-												</td>
-												<td>
-													+ <input type="radio" name="p4" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p4" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
-
-											<tr class="odd" id="row_0">
-												<td>
-													5. Creo que los formalismos coartan y limitan la actuación libre de las personas.  
-												</td>
-												<td>
-													+ <input type="radio" name="p5" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p5" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
-
-											<tr class="odd" id="row_0">
-												<td>
-													6. Me interesa saber cuáles son los sistemas de valores de los demás y con qué criterios actúan.  
-												</td>
-												<td>
-													+ <input type="radio" name="p6" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p6" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
-
-											<tr class="odd" id="row_0">
-												<td>
-													7. Pienso que el actuar intuitivamente puede ser siempre tan válido como actuar reflexivamente.  
-												</td>
-												<td>
-													+ <input type="radio" name="p7" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p7" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
-
-											<tr class="odd" id="row_0">
-												<td>
-													8. Creo que lo más importante es que las cosas funcionen. 
-												</td>
-												<td>
-													+ <input type="radio" name="p8" id="1" value="1" required onclick="actualizarProgreso()"/>
-												</td>
-												<td>
-													- <input type="radio" name="p8" id="2" value="0" required onclick="actualizarProgreso()"/>
-												</td>
-											</tr>
+						<style> table tr:hover{ background-color: #bbd6ef !important; } </style>
+						<table width="100%" name="aprendizaje" class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+								<center><b><legend><strong>Cuestionario HONEY-ALONSO de ESTILOS DE APRENDIZAJE</strong></legend></b></center>
+								<center><b><h5><strong>Instrucciones para responder al cuestionario:</strong></h5></b></center>
+								<center><p> Si estás más de acuerdo que en desacuerdo con la sentencia pon un <b>signo más (+), </b></p>
+								<p>	Si, por el contrario, estás más en desacuerdo que de acuerdo, pon un <b>signo menos (-).</b></p></center>
+								</tr>
+								<div class="progress">
+									<div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="36" style="width: 0%">							    
+									</div> 
+								</div><br>
+							</thead>
+								<tr class="odd" id="row_0">
+									<td>1. Tengo fama de decir lo que pienso claramente y sin rodeos.</td>
+									<td>
+										+ <input type="radio" name="p1" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p1" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
+								<tr class="odd" id="row_0">
+									<td>2. Estoy seguro/a de lo que es bueno y lo que es malo, lo que está bien y lo </td>
+									<td>
+										+ <input type="radio" name="p2" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p2" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
+								<tr class="odd" id="row_0">
+									<td>3. Muchas veces actúo sin mirar las consecuencias.</td>
+									<td>
+										+ <input type="radio" name="p3" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p3" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
+								<tr class="odd" id="row_0">
+									<td>4. Normalmente trato de resolver los problemas metódicamente y paso a paso.</td>
+									<td>
+										+ <input type="radio" name="p4" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p4" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
+								<tr class="odd" id="row_0">
+									<td>5. Creo que los formalismos coartan y limitan la actuación libre de las personas.</td>
+									<td>
+										+ <input type="radio" name="p5" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p5" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
+								<tr class="odd" id="row_0">
+									<td>6. Me interesa saber cuáles son los sistemas de valores de los demás y con qué criterios actúan.</td>
+									<td>
+										+ <input type="radio" name="p6" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p6" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
+								<tr class="odd" id="row_0">
+									<td>7. Pienso que el actuar intuitivamente puede ser siempre tan válido como actuar reflexivamente.</td>
+									<td>
+										+ <input type="radio" name="p7" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p7" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
+								<tr class="odd" id="row_0">
+									<td>8. Creo que lo más importante es que las cosas funcionen.</td>
+									<td>
+										+ <input type="radio" name="p8" id="1" value="1" required onclick="actualizarProgreso()"/>
+									</td>
+									<td>
+										- <input type="radio" name="p8" id="2" value="0" required onclick="actualizarProgreso()"/>
+									</td>
+								</tr>
 
 											<tr class="odd" id="row_0">
 												<td>
