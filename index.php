@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
     <!-- Estilos CSS locales -->
-    <link rel="stylesheet" href="css/fondo.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    
     <!-- CSS Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <!-- Agregamos Bootstrap -->
@@ -17,7 +18,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="jumbotron mt-4">
+        <div class="">
         <form action="validar.php" method="post">
             <div class="row justify-content-center">
                 <div class="col-md-4">
