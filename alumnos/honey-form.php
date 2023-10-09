@@ -61,8 +61,8 @@
 													menos (-).</b></p></center>
 											</tr>
 											<div class="progress">
-											  <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="36" style="width: 0%">							    
-											  </div>
+												<div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="36" style="width: 0%">							    
+												</div> 
 											</div>
 											<br>
 										</thead>
@@ -1037,7 +1037,7 @@
 									<input type="submit" name="submit" class="btn btn-success" value="Guardar">
 								</div>
 							</div>
-				        </form>
+						</form>
 					</div>
 				</div>
 			<br>
