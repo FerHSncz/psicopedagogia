@@ -14,9 +14,8 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 		<!-- Estilos CSS locales -->
-		<link rel="stylesheet" href="css/estilos.css">
-		<link rel="stylesheet" href="css/fondo.css">
-		<link rel="stylesheet" href="css/centrar.css">		
+		<link rel="stylesheet" href="../css/estilos.css">
+		<link rel="stylesheet" href="../css/centrar.css">		
 	</head>
 	<body>
 		<!-- Barra de navegación -->
