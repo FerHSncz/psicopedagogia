@@ -30,7 +30,7 @@
                         <input type="text" class="form-control" id="email" placeholder="Ingrese su email" name="email">
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
+                        <label for="password">Contraseña </label>
                         <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" name="password">
                     </div>
                     <div class="form-group">
