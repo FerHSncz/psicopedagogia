@@ -1,5 +1,4 @@
-<?php
-// Incluir el archivo de config.php externo
+<?php // Incluir el archivo de config.php externo
 include '../config.php';
 
 // Obtener los datos del formulario
@@ -30,7 +29,7 @@ if ($resultado->num_rows == 1) {
         // Alerta de script y regreso a index.html
         echo '<script>alert("Contraseña incorrecta."); window.location.href = "index.php";</script>';
     }
-} else {
+    } else {
     // Usuario no encontrado
     //echo 'Usuario no encontrado.';
     // Alerta de script y regreso a index.html
