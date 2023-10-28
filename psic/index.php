@@ -1,12 +1,11 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php'; 
-    
+
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
-    header("location: index.php");
-    exit();
-}
+        header("location: index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +73,6 @@
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -118,7 +116,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Tarjeta Amarilla -->
                             <div class="col-xl-6 col-md-6 text-center">
                                 <div class="card bg-warning mb-4">
@@ -129,7 +126,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Tarjeta Verde -->
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-success text-white mb-4">
@@ -140,7 +136,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Tarjeta Roja -->
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
@@ -152,13 +147,11 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <!-- Linea separador -->
                         <div class="card mb-4">
                         </div>
                     </div>
                 </main>
-                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">

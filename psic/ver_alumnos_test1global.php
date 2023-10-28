@@ -1,12 +1,11 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php';
 
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
-    header("location: index.html");
-    exit();
-}
+        header("location: index.html");
+        exit();
+    }
 
     // Consulta SQL para obtener los datos de la tabla test1.
     $sql = "SELECT p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36 FROM test1";
@@ -28,7 +27,7 @@
 
     // Cerrar la conexión a la base de datos.
     $con->close();
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -44,12 +43,11 @@
         <!-- Fontawesome -->
 		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Incluir la librería de Google Charts -->
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <script type="text/javascript">
-                // Cargar la librería de visualización y preparar la función para dibujar la gráfica.
-                google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(drawChart);
-
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        // Cargar la librería de visualización y preparar la función para dibujar la gráfica.
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
                 function drawChart() {
                     var data = google.visualization.arrayToDataTable([
                         ['Categoría', 'Suma'],
@@ -66,7 +64,7 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
                     chart.draw(data, options);
                 }
-            </script>
+        </script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -119,7 +117,6 @@
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -133,28 +130,24 @@
                             <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje de Preferencia de Lynn O’Brien (1990).</strong></div>                        
                             <!-- Div para la gráfica de pastel -->
                             <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-                        
-                        <!-- Linea separador -->
-                        <div class="card mb-4">
-                        </div>
-                        <!-- Fin Linea separador -->
+                            <!-- Linea separador -->
+                            <div class="card mb-4"></div>
+                            <!-- Fin Linea separador -->
                         </div>
                 </main>
-                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                &middot;
+                                    &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>
                 </footer>
             </div> <!-- Fin del <div id="layoutSidenav_content"> -->
-        
         </div> <!-- Fin del <div id="layoutSidenav"> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>

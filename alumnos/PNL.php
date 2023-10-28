@@ -51,7 +51,6 @@
                             </select>
                         </div>
                     </div>
-                    
                     <div class="col-lg-6" style="margin: 0 auto;">
                         <P>3. Cuando conversas con otra persona, tú:</P>
                         <div class="form-group">
@@ -217,7 +216,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="col-lg-6" style="margin: 0 auto;">
                         <P>18. ¿Cómo prefieres pasar el tiempo con tu novia o novio?</P>
                         <div class="form-group">

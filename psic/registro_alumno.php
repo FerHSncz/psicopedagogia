@@ -1,6 +1,5 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php'; 
     
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
@@ -135,7 +134,7 @@
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                &middot;
+                                    &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
@@ -143,6 +142,7 @@
                 </footer>
             </div>
         </div>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>

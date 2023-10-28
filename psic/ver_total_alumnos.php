@@ -1,12 +1,11 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php';
 
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
-    header("location: index.php");
-    exit();
-}
+        header("location: index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +75,6 @@
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -108,8 +106,6 @@
                             <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
                             <!-- DataTables JS para la paginacion-->
                             <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
-
                             <!-- Script de datos de alumnos -->
                             <script>
                                 $(document).ready(function() {
@@ -126,16 +122,12 @@
                                 });
                                 });
                             </script>
-                        </div>
-                        <br>
-                        
+                        </div><br>
                         <!-- Linea separador -->
-                        <div class="card mb-4">
-                        </div>
+                        <div class="card mb-4"></div>
                         <!-- Fin Linea separador -->
                     </div>
                 </main>
-                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -149,7 +141,6 @@
                     </div>
                 </footer>
             </div> <!-- Fin del <div id="layoutSidenav_content"> -->
-        
         </div> <!-- Fin del <div id="layoutSidenav"> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>
