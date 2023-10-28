@@ -30,7 +30,7 @@ if ($resultadoAlumnos->num_rows == 1) {
         $_SESSION['nombre'] = $fila['nombre']; // Almacenar el nombre del usuario en la sesión
         header("Location: alumnos/index.php");
         exit();
-     } else {
+    } else {
         // Contraseña incorrecta
         echo '<script>alert("Intente de nuevo."); window.location.href = "index.php";</script>';
     }
@@ -45,7 +45,7 @@ if ($resultadoAlumnos->num_rows == 1) {
         $_SESSION['nombre'] = $fila['nombre']; // Almacenar el nombre del usuario en la sesión
         header("Location: jefe/index.php");
         exit();
-      } else {
+    } else {
         // Contraseña incorrecta
         echo '<script>alert("Intente de nuevo."); window.location.href = "index.php";</script>';
     }
@@ -59,7 +59,7 @@ if ($resultadoAlumnos->num_rows == 1) {
         $_SESSION['email'] = $email;
         $_SESSION['nombre'] = $fila['nombre']; // Almacenar el nombre del usuario en la sesión
         header("Location: psic/index.php");
-      } else {
+    } else {
         // Contraseña incorrecta
         echo '<script>alert("Intente de nuevo."); window.location.href = "index.php";</script>';
     }
