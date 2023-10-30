@@ -1,6 +1,5 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php';
 
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
@@ -22,18 +21,14 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $activoSum += $row['p3'] + $row['5'] + $row['p7'] + $row['9'] + $row['p13'] + $row['p20'] + $row['p26'] + $row['p27'] + $row['p35'] + $row['p37'] + $row['p41'] + $row['p43'] + $row['p46'] + $row['p48'] + $row['p51'] + $row['p61'] + $row['p67'] + $row['p74'] + $row['p75'] + $row['p77'];
-
             $reflexivoSum += $row['p10'] + $row['p16'] + $row['p18'] + $row['p19'] + $row['p28'] + $row['p31'] + $row['p32'] + $row['p34'] + $row['p36'] + $row['p39'] + $row['p42'] + $row['p44'] + $row['p49'] + $row['p55'] + $row['p58'] + $row['p63'] + $row['p65'] + $row['p69'] + $row['p70'] + $row['p79'];
-
             $teoricoSum += $row['p2'] + $row['p4'] + $row['p6'] + $row['p11'] + $row['p15'] + $row['p17'] + $row['p21'] + $row['p23'] + $row['p25'] + $row['p29'] + $row['p33'] + $row['p45'] + $row['p50'] + $row['p54']  + $row['p60'] + $row['p64']  + $row['p66'] + $row['p71']  + $row['p78'] + $row['p80'];
-
             $pragmaticoSum += $row['p1'] + $row['p8'] + $row['p12'] + $row['p14'] + $row['p22'] + $row['p24'] + $row['p30'] + $row['p38'] + $row['p40'] + $row['p47'] + $row['p52'] + $row['p53'] + $row['p56'] + $row['p57']  + $row['p59'] + $row['p62']  + $row['p68'] + $row['p72']  + $row['p73'] + $row['p76'];
         }
     }
-
-    // Cerrar la conexión a la base de datos.
-    $con->close();
-    ?>
+// Cerrar la conexión a la base de datos.
+$con->close();
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -49,7 +44,6 @@
         <!-- Fontawesome -->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
@@ -102,7 +96,6 @@
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -113,115 +106,84 @@
                         </ol>
                         <div class="row">
                         <div class="container">
-                            <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje Cuestionario Honey-Alonso.</strong></div>         <head>
-                                
-                                
-                                
-                                
-                                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                                    <html>
-                                    <head>
-                                        <title>Resultados Finales</title>
-                                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                    
-                                        <canvas id="chart1" style="display: block;box-sizing: border-box;height: 450px;width: 450px;background: white;"></canvas>
-                                    <script>
-                                            function goBack() {
-                                                window.history.back();
-                                            }
-                                    </script>
-                                    <script>
-                                    
-                                    var ctx = document.getElementById("chart1");
-                                    var data = {
-                                            labels: ["ACTIVO", "REFLEXIVO", "TEORICO", "PRAGMATICO"],
-                                            datasets: [{
-                                                label: 'Perfil de Aprendizaje',
-                                                data:[
-                                                <?php echo $activoSum;; ?>,
-                                                <?php echo $reflexivoSum; ?>,
-                                                <?php echo $teoricoSum; ?>,
-                                                <?php echo $pragmaticoSum; ?>
-                                            ],
-                                                backgroundColor: [ "#000000"
-                                    
-                                            ],
-                                            borderColor: "#000000",
-                                    
-                                            pointBackgroundColor: [
-                                                "#05AD3C", // Color del primer punto (ACTIVO)
-                                                "#D70000", // Color del segundo punto (REFLEXIVO)
-                                                "#FFFF00", // Color del tercer punto (TEORICO)
-                                                "#00B8DF" // Color del cuarto punto (PRAGMATICO)
-                                            ],
-                                                borderWidth: 1,
-                                                fill: false
-                                            },
-                                            ]
-                                        };
-                                    
-                                    var options = {
-                                    
-                                                maintainAspectRatio: true,
-                                                spanGaps: false,
-                                                scales: {
-                                                        r: {
-                                                            beginAtZero: true,
-                                                            stepSize: 0.01
-                                                        }
-                                                    },
-                                                elements: {
-                                    
-                                                    line: {
-                                                        tension: 0.01
-                                                    }
-                                    
-                                                },
-                                    
-                                                };
-                                                
-                                    
-                                    var chart1 = new Chart(ctx, {
-                                        type: 'radar',
-                                        data: data,
-                                        options: options
-                                    });
-                                    </script>
-                                    </head>
-                                    </html>
-    
-    
-    
-    
-</head>
-<body>
-    <div id="curve_chart" style="width: 900px; height: 400px"></div>
-</body>          
-                        <!-- Div para la gráfica de pastel -->
-                        <div id="piechart_3d" style="width: 900px; height: 50px;"></div>
-                        
-                        <!-- Linea separador -->
-                        <div class="card mb-4">
-                        </div>
-                        <!-- Fin Linea separador -->
-                        </div>
-                </main>
-                
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
-                            <div>
-                                <a href="#">Politicas de privacidad</a>
-                                &middot;
-                                <a href="#">Terminos &amp; Condiciones</a>
+                            <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje Cuestionario Honey-Alonso.</strong></div>
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <title>Resultados Finales</title>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <canvas id="chart1" style="display: block;box-sizing: border-box;height: 450px;width: 450px;background: white;"></canvas>
+                            <script>
+                                function goBack() {
+                                    window.history.back();
+                                }
+                            </script>
+                            <script>
+                                var ctx = document.getElementById("chart1");
+                                var data = {
+                                    labels: ["ACTIVO", "REFLEXIVO", "TEORICO", "PRAGMATICO"],
+                                    datasets: [{
+                                        label: 'Perfil de Aprendizaje',
+                                        data:[
+                                            <?php echo $activoSum;; ?>,
+                                            <?php echo $reflexivoSum; ?>,
+                                            <?php echo $teoricoSum; ?>,
+                                            <?php echo $pragmaticoSum; ?>
+                                        ],
+                                        backgroundColor: [ "#000000"],
+                                        borderColor: "#000000",
+                                        pointBackgroundColor: [
+                                            "#05AD3C", // Color del primer punto (ACTIVO)
+                                            "#D70000", // Color del segundo punto (REFLEXIVO)
+                                            "#FFFF00", // Color del tercer punto (TEORICO)
+                                            "#00B8DF" // Color del cuarto punto (PRAGMATICO)
+                                        ],
+                                        borderWidth: 1,
+                                        fill: false
+                                    },]
+                                };
+                                var options = {
+                                    maintainAspectRatio: true,
+                                    spanGaps: false,
+                                    scales: {
+                                        r: {
+                                            beginAtZero: true,
+                                            stepSize: 0.01
+                                        }
+                                    },
+                                    elements: {
+                                        line: {
+                                            tension: 0.01
+                                        }
+                                    },
+                                };
+                                var chart1 = new Chart(ctx, {
+                                    type: 'radar',
+                                    data: data,
+                                    options: options
+                                });
+                            </script>
+                            <div id="curve_chart" style="width: 900px; height: 400px"></div>
+                            <!-- Div para la gráfica de pastel -->
+                            <div id="piechart_3d" style="width: 900px; height: 50px;"></div>
+                            <!-- Linea separador -->
+                            <div class="card mb-4">
                             </div>
-                        </div>
-                    </div>
-                </footer>
-            </div> <!-- Fin del <div id="layoutSidenav_content"> -->
-        
-        </div> <!-- Fin del <div id="layoutSidenav"> -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+                            <!-- Fin Linea separador -->
+                            </div>
+                        </main>
+                        <footer class="py-4 bg-light mt-auto">
+                            <div class="container-fluid px-4">
+                                <div class="d-flex align-items-center justify-content-between small">
+                                    <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
+                                    <div>
+                                        <a href="#">Politicas de privacidad</a>
+                                            &middot;
+                                        <a href="#">Terminos &amp; Condiciones</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div> <!-- Fin del <div id="layoutSidenav_content"> -->
+                </div> <!-- Fin del <div id="layoutSidenav"> -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>
 </html>

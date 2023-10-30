@@ -35,7 +35,7 @@ if (isset($_POST['password'])) {
 
     if ($result) {
         //$mensaje = 'Contraseña actualizada con éxito.';
-        echo "<script>alert('Contraseña actualizada con éxito.'); window.location.href = 'dash_jefe.php';</script>";
+        echo "<script>alert('Contraseña actualizada con éxito.'); window.location.href = 'index.php';</script>";
     } else {
         $mensaje = 'Error al actualizar la contraseña: ' . $stmt->error;
     }
