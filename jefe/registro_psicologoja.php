@@ -18,11 +18,11 @@ $consulta = "INSERT INTO psicologos (nombre, telefono, email, password) VALUES (
 if ($con->query($consulta) === TRUE) {
     //echo 'Psicologo registrado correctamente.';
     // Alerta de script y regreso a index.html
-    echo '<script>alert("Psicologo registrado correctamente."); window.location.href = "dash_jefe.php";</script>';
+    echo '<script>alert("Psicologo registrado correctamente."); window.location.href = "index.php";</script>';
 } else {
     //echo 'Error al registrar el Psicologo: ' . $con->error;
     // Alerta de script y regreso a index.html
-    echo '<script>alert("Error al registrar al Psicologo: ' . $con->error . '"); window.location.href = "dash_jefe.php";</script>';
+    echo '<script>alert("Error al registrar al Psicologo: ' . $con->error . '"); window.location.href = "index.php";</script>';
 }
 
 // Cerrar la conexión

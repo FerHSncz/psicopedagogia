@@ -1,5 +1,4 @@
-<?php
-// Incluir el archivo de config.php externo
+<?php // Incluir el archivo de config.php externo
 include '../config.php';
 
 // Obtener los datos del formulario
@@ -19,11 +18,11 @@ $consulta = "INSERT INTO alumnos (nombre, telefono, carrera, email, password) VA
 if ($con->query($consulta) === TRUE) {
     //echo 'Alumno registrado correctamente.';
     // Alerta de script y regreso a index.html
-    echo '<script>alert("Alumno registrado correctamente."); window.location.href = "dash_jefe.php";</script>';
+    echo '<script>alert("Alumno registrado correctamente."); window.location.href = "index.php";</script>';
 } else {
     //echo 'Error al registrar el Alumno: ' . $con->error;
     // Alerta de script y regreso a index.html
-    echo '<script>alert("Error al registrar al Alumno: ' . $con->error . '"); window.location.href = "dash_jefe.php";</script>';
+    echo '<script>alert("Error al registrar al Alumno: ' . $con->error . '"); window.location.href = "index.php";</script>';
 }
 
 // Cerrar la conexión
