@@ -55,14 +55,14 @@ $con->close();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Jefe de Área | Cambiar contraseña</title>
         <!-- Estilos CSS locales -->
-		<link href="css/styles.css" rel="stylesheet" />
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- Fontawesome -->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_jefe.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -95,6 +95,7 @@ $con->close();
                                     <a class="nav-link" href="test-lyn.html">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-alonso1.html">Honey Alonso</a>
                                     <a class="nav-link" href="PNL.html">Modelo PNL</a>
+                                    <a class="nav-link" href="#">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -112,7 +113,6 @@ $con->close();
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -129,13 +129,13 @@ $con->close();
                             </div>
                             <button type="submit" class="btn btn-success">Actualizar</button>
                         </form>
-                            <!-- Script para mostrar la alerta -->
-                            <script>
-                                var mensaje = '<?php echo $mensaje; ?>';
-                                if (mensaje !== '') {
-                                    alert(mensaje);
-                                }
-                            </script>
+                        <!-- Script para mostrar la alerta -->
+                        <script>
+                            var mensaje = '<?php echo $mensaje; ?>';
+                            if (mensaje !== '') {
+                                alert(mensaje);
+                            }
+                        </script>
                     </div>                                
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -144,7 +144,7 @@ $con->close();
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                &middot;
+                                    &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>

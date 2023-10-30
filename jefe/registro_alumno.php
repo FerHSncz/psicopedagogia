@@ -23,7 +23,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_jefe.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -55,7 +55,8 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="test-lyn.html">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-alonso1.html">Honey Alonso</a>
-                                    <a class="nav-link" href="PNL.html">Modelo PNL</a>
+                                    <a class="nav-link" href="PNL.php">Modelo PNL</a>
+                                    <a class="nav-link" href="#">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

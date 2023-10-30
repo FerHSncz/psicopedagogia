@@ -37,7 +37,7 @@ $con->close();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Resultado Global Cuestionario Honey-Alonso</title>
         <!-- Estilos CSS locales -->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
@@ -46,7 +46,7 @@ $con->close();
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_jefe.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -78,6 +78,7 @@ $con->close();
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-test3.php">Honey Alonso</a>
                                     <a class="nav-link" href="pnl_test2.php">Modelo PNL</a>
+                                    <a class="nav-link" href="#">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

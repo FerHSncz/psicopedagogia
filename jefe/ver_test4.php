@@ -1,12 +1,11 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php';
 
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
-    header("location: index.php");
-    exit();
-  }
+        header("location: index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Jefe de Área | Ver Resultados Individuales</title>
         <!-- Estilos CSS locales -->
-		<link href="css/styles.css" rel="stylesheet" />
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
@@ -26,7 +25,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_jefe.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -58,6 +57,7 @@
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-test3.php">Honey Alonso</a>
                                     <a class="nav-link" href="pnl_test2.php">Modelo PNL</a>
+                                    <a class="nav-link" href="#">Riegos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -75,7 +75,6 @@
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -106,147 +105,121 @@
                                     // Conexión utilizando las variables del archivo config_db.php
                                     require_once('../config.php');
                                     $con = new mysqli($hostname, $username, $password, $dbname);
-
                                     // Verificar si la conexión fue exitosa
                                     if ($con->connect_error) {
                                         die("Error de conexión a la base de datos: " . $con->connect_error);
                                     }
-
                                     // Realizar la consulta SQL
                                     $sql = "SELECT * FROM honey";
                                     $result = $con->query($sql);
-
                                     // Restablecer el puntero del resultado de la consulta al principio
                                     mysqli_data_seek($result, 0);
-
                                     // Realizar el while por cada categoria segun los valores a sumar
                                     while ($mostrar = mysqli_fetch_array($result)) {
                                         $AprendizajeSum = $mostrar['p1'] + $mostrar['p5'] + $mostrar['p9'] + $mostrar['p13'] + $mostrar['p17'];
-
                                         $PsicoemocionalSum = $mostrar['p2'] + $mostrar['p6'] + $mostrar['p10'] + $mostrar['p14'] + $mostrar['p18'];
-
                                         $SocialSum = $mostrar['p3'] + $mostrar['p7'] + $mostrar['p11'] + $mostrar['p15'] + $mostrar['p19'];
-
                                         $ProyectoSum = $mostrar['p4'] + $mostrar['p8'] + $mostrar['p12'] + $mostrar['p16'] + $mostrar['p20'];
                                         ?>
-
-                                        <!-- Impresion del while de cada categoria -->
-                                        <tr>
-                                            <td><?php echo $mostrar['id'] ?></td>
-                                            <td><?php echo $mostrar['nombre'] ?></td>
-                                            <td><?php echo $AprendizajeSum; ?></td>
-                                            <td><?php echo $PsicoemocionalSum; ?></td>
-                                            <td><?php echo $SocialSum; ?></td>
-                                            <td><?php echo $ProyectoSum; ?></td>
-
-                                            <td>
-                                                <!-- Pasar esos datos al modal por id segun la tabla de resultados NO la de SQL -->
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#recordModal<?php echo $mostrar['id']; ?>">
-                                                    <i class="fas fa-chart-pie"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        
-                                        <!-- Modal por cada fila $row de la tabla de resultados -->
-                                        <div class="modal fade" id="recordModal<?php echo $mostrar['id']; ?>" tabindex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="modalTitle<?php echo $mostrar['id']; ?>">Registro de detalles para el ID: <?php echo $mostrar['id']; ?></h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body" id="modalContent<?php echo $mostrar['id']; ?>">
-                                                        <p><strong>ID: </strong><?php echo $mostrar['id']; ?></p>
-                                                        <p><strong>Nombre: </strong><?php echo $mostrar['nombre']; ?></p>
-                                                        <p><strong>ACTIVO: </strong><?php echo $AprendizajeSum; ?></p>
-                                                        <p><strong>REFLEXIVO: </strong><?php echo $PsicoemocionalSum; ?></p>
-                                                        <p><strong>TEORICO: </strong><?php echo $SocialSum; ?></p>
-                                                        <p><strong>PRAGMATICO: </strong><?php echo $ProyectoSum; ?></p>
-
-                                                        <!-- DIV para mostrar el grafico -->
-                                                        <div id="chart_div<?php echo $mostrar['id']; ?>"></div>
-                                                    </div>
+                                    <!-- Impresion del while de cada categoria -->
+                                    <tr>
+                                        <td><?php echo $mostrar['id'] ?></td>
+                                        <td><?php echo $mostrar['nombre'] ?></td>
+                                        <td><?php echo $AprendizajeSum; ?></td>
+                                        <td><?php echo $PsicoemocionalSum; ?></td>
+                                        <td><?php echo $SocialSum; ?></td>
+                                        <td><?php echo $ProyectoSum; ?></td>
+                                        <td>
+                                            <!-- Pasar esos datos al modal por id segun la tabla de resultados NO la de SQL -->
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#recordModal<?php echo $mostrar['id']; ?>">
+                                                <i class="fas fa-chart-pie"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <!-- Modal por cada fila $row de la tabla de resultados -->
+                                    <div class="modal fade" id="recordModal<?php echo $mostrar['id']; ?>" tabindex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalTitle<?php echo $mostrar['id']; ?>">Registro de detalles para el ID: <?php echo $mostrar['id']; ?></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body" id="modalContent<?php echo $mostrar['id']; ?>">
+                                                    <p><strong>ID: </strong><?php echo $mostrar['id']; ?></p>
+                                                    <p><strong>Nombre: </strong><?php echo $mostrar['nombre']; ?></p>
+                                                    <p><strong>ACTIVO: </strong><?php echo $AprendizajeSum; ?></p>
+                                                    <p><strong>REFLEXIVO: </strong><?php echo $PsicoemocionalSum; ?></p>
+                                                    <p><strong>TEORICO: </strong><?php echo $SocialSum; ?></p>
+                                                    <p><strong>PRAGMATICO: </strong><?php echo $ProyectoSum; ?></p>
+                                                    <!-- DIV para mostrar el grafico -->
+                                                    <div id="chart_div<?php echo $mostrar['id']; ?>"></div>
                                                 </div>
                                             </div>
-                                        </div>                
-                                        <?php 
-                                    }
+                                        </div>
+                                    </div>                
+                                    <?php 
+                                        }
                                     ?>
                                 </tbody>
                             </table>
                         </div>
-
                         <!-- API de Google Charts  -->
                         <script src="https://www.gstatic.com/charts/loader.js"></script>
                         <script>
-                          google.charts.load('current', {'packages':['corechart']});
-                          google.charts.setOnLoadCallback(drawCharts);
-
-                          function drawCharts() {
-                            <?php
-                            // Restablecer el puntero del resultado de la consulta al principio
-                            mysqli_data_seek($result, 0);
-
-                            while ($mostrar = mysqli_fetch_array($result)) {
-                              // Extraer datos para la fila actual
-                                         $AprendizajeSum = $mostrar['p1'] + $mostrar['p5'] + $mostrar['p9'] + $mostrar['p13'] + $mostrar['p17'];
-
-                                        $PsicoemocionalSum = $mostrar['p2'] + $mostrar['p6'] + $mostrar['p10'] + $mostrar['p14'] + $mostrar['p18'];
-
-                                        $SocialSum = $mostrar['p3'] + $mostrar['p7'] + $mostrar['p11'] + $mostrar['p15'] + $mostrar['p19'];
-
-                                        $ProyectoSum = $mostrar['p4'] + $mostrar['p8'] + $mostrar['p12'] + $mostrar['p16'] + $mostrar['p20'];
-
-                              // Crear un array para los datos del gráfico
-                              $chartData = array(
-                                array('Tipo', 'Cantidad'),
-                                array('Activo', $AprendizajeSum),
-                                array('Reflexivo', $PsicoemocionalSum),
-                                array('Teorico', $SocialSum),
-                                array('Pragmatico', $ProyectoSum)
-                              );
-
-                              // Convertir el array de PHP en un array de JavaScript usando json_encode
-                              $chartDataJson = json_encode($chartData);
-                            ?>
-                            
-                            var data<?php echo $mostrar['id']; ?> = google.visualization.arrayToDataTable(<?php echo $chartDataJson; ?>);
-                            var options<?php echo $mostrar['id']; ?> = {
-                              title: 'Tipo de Aprendizaje',
-                              is3D: true,
-                            };
-
-                            var chart<?php echo $mostrar['id']; ?> = new google.visualization.LineChart(document.getElementById('chart_div<?php echo $mostrar['id']; ?>'));
-                            chart<?php echo $mostrar['id']; ?>.draw(data<?php echo $mostrar['id']; ?>, options<?php echo $mostrar['id']; ?>);
-                            
+                            google.charts.load('current', {'packages':['corechart']});
+                            google.charts.setOnLoadCallback(drawCharts);
+                            function drawCharts() {
+                                <?php
+                                // Restablecer el puntero del resultado de la consulta al principio
+                                mysqli_data_seek($result, 0);
+                                while ($mostrar = mysqli_fetch_array($result)) {
+                                  // Extraer datos para la fila actual
+                                    $AprendizajeSum = $mostrar['p1'] + $mostrar['p5'] + $mostrar['p9'] + $mostrar['p13'] + $mostrar['p17'];
+                                    $PsicoemocionalSum = $mostrar['p2'] + $mostrar['p6'] + $mostrar['p10'] + $mostrar['p14'] + $mostrar['p18'];
+                                    $SocialSum = $mostrar['p3'] + $mostrar['p7'] + $mostrar['p11'] + $mostrar['p15'] + $mostrar['p19'];
+                                    $ProyectoSum = $mostrar['p4'] + $mostrar['p8'] + $mostrar['p12'] + $mostrar['p16'] + $mostrar['p20'];
+                                  // Crear un array para los datos del gráfico
+                                    $chartData = array(
+                                        array('Tipo', 'Cantidad'),
+                                        array('Activo', $AprendizajeSum),
+                                        array('Reflexivo', $PsicoemocionalSum),
+                                        array('Teorico', $SocialSum),
+                                        array('Pragmatico', $ProyectoSum)
+                                    );
+                                    // Convertir el array de PHP en un array de JavaScript usando json_encode
+                                    $chartDataJson = json_encode($chartData);
+                                ?>
+                                var data<?php echo $mostrar['id']; ?> = google.visualization.arrayToDataTable(<?php echo $chartDataJson; ?>);
+                                var options<?php echo $mostrar['id']; ?> = {
+                                    title: 'Tipo de Aprendizaje',
+                                    is3D: true,
+                                };
+                                var chart<?php echo $mostrar['id']; ?> = new google.visualization.LineChart(document.getElementById('chart_div<?php echo $mostrar['id']; ?>'));
+                                chart<?php echo $mostrar['id']; ?>.draw(data<?php echo $mostrar['id']; ?>, options<?php echo $mostrar['id']; ?>);
                             <?php
                             }
                             ?>
-                          }
+                            }
                         </script>                                                                   
-                        </div>
-                        
-                        <!-- Linea separador -->
-                        <div class="card mb-4">
-                        </div>
-                        <!-- Fin Linea separador -->
                     </div>
+                    <!-- Linea separador -->
+                    <div class="card mb-4"></div>
+                    <!-- Fin Linea separador -->
+                </div>
                 </main>
-                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                &middot;
+                                    &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>
                 </footer>
             </div> <!-- Fin del <div id="layoutSidenav_content"> -->
-        
         </div> <!-- Fin del <div id="layoutSidenav"> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>

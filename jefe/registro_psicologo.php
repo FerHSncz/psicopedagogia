@@ -16,14 +16,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Jefe de Área | Registrar Psicólogo</title>
         <!-- Estilos CSS locales -->
-		<link href="css/styles.css" rel="stylesheet" />
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- Fontawesome -->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_jefe.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -118,7 +118,7 @@
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                &middot;
+                                    &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>

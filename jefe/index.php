@@ -1,12 +1,11 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php'; 
     
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
-    header("location: index.php");
-    exit();
-}
+        header("location: index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_jefe.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -76,7 +75,6 @@
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -94,18 +92,14 @@
                                         <?php                                             
                                         // Consulta SQL para contar el número de psicologos en la tabla "psicologos"
                                         $sql = "SELECT COUNT(*) AS total_alumnos FROM psicologos";
-
                                         // Ejecutar la consulta
                                         $result = $con->query($sql);
-
                                         // Verificar si la consulta se ejecutó correctamente
                                         if ($result) {
                                             // Obtener el resultado como un array asociativo
                                             $row = $result->fetch_assoc();
-
                                             // Obtener el número de psicologos contados
                                             $total_alumnos = $row['total_alumnos'];
-
                                             // Mostrar el resultado                                    
                                             echo "<div class='small text-white'>El número total de psicólogos registrados es: " . $total_alumnos . "</div>";
                                             echo "<div class='small text-white'><i class='fas fa-angle-right'></i> Ver datos</div>";
@@ -116,7 +110,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                             <!-- Tarjeta total de Alumnos -->
                             <div class="col-xl-6 col-md-6 text-center">
                                 <div class="card bg-success text-white mb-4">
@@ -125,35 +118,28 @@
                                     <a class="small text-white stretched-link" href="ver_total_alumnos.php"></a>
                                         <!-- Tarjeta total de Alumnos-->
                                         <?php                                             
-                                        // Consulta SQL para contar el número de alumnos en la tabla "alumnos"
-                                        $sql = "SELECT COUNT(*) AS total_alumnos FROM alumnos";
-
-                                        // Ejecutar la consulta
-                                        $result = $con->query($sql);
-
-                                        // Verificar si la consulta se ejecutó correctamente
-                                        if ($result) {
-                                            // Obtener el resultado como un array asociativo
-                                            $row = $result->fetch_assoc();
-
-                                            // Obtener el número de alumnos contados
-                                            $total_alumnos = $row['total_alumnos'];
-
-                                            // Mostrar el resultado                                    
-                                            echo "<div class='small text-white'>El número total de alumnos registrados es: " . $total_alumnos . "</div>";
-                                            echo "<div class='small text-white'><i class='fas fa-angle-right'></i> Ver datos</div>";
-                                        } else {
-                                            echo "Error al ejecutar la consulta: " . $con->error;
-                                        }
-
-                                        // Cerrar la conexión a la base de datos
-                                        $con->close();
+                                            // Consulta SQL para contar el número de alumnos en la tabla "alumnos"
+                                            $sql = "SELECT COUNT(*) AS total_alumnos FROM alumnos";
+                                            // Ejecutar la consulta
+                                            $result = $con->query($sql);
+                                            // Verificar si la consulta se ejecutó correctamente
+                                            if ($result) {
+                                                // Obtener el resultado como un array asociativo
+                                                $row = $result->fetch_assoc();
+                                                // Obtener el número de alumnos contados
+                                                $total_alumnos = $row['total_alumnos'];
+                                                // Mostrar el resultado                                    
+                                                echo "<div class='small text-white'>El número total de alumnos registrados es: " . $total_alumnos . "</div>";
+                                                echo "<div class='small text-white'><i class='fas fa-angle-right'></i> Ver datos</div>";
+                                            } else {
+                                                echo "Error al ejecutar la consulta: " . $con->error;
+                                            }
+                                            // Cerrar la conexión a la base de datos
+                                            $con->close();
                                         ?>
-
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Tarjeta Amarilla -->
                             <div class="col-xl-6 col-md-6 text-center">
                                 <div class="card bg-warning mb-4">
@@ -164,7 +150,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Tarjeta aqua -->
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-info text-white mb-4">
@@ -175,7 +160,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Tarjeta Roja -->
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
@@ -186,7 +170,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Cuestionario de Riesgos Psicosociales</div>
@@ -196,7 +179,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Riesgos Psicosociales</div>
@@ -206,23 +188,20 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Tarjeta gris -->
                         </div>
-                        
                         <!-- Linea separador -->
                         <div class="card mb-4">
                         </div>
                     </div>
                 </main>
-                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                &middot;
+                                    &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>

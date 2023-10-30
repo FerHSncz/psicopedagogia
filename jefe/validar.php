@@ -1,5 +1,4 @@
-<?php
-// Incluir el archivo de config.php externo
+<?php // Incluir el archivo de config.php externo
 include '../config.php';
 
 // Obtener los datos del formulario
@@ -34,7 +33,7 @@ if ($resultado->num_rows == 1) {
     // Usuario no encontrado
     //echo 'Usuario no encontrado.';
     // Alerta de script y regreso a index.html
-    echo '<script>alert("Usuario no encontrado."); window.location.href = "index.html";</script>';
+    echo '<script>alert("Usuario no encontrado."); window.location.href = "index.php";</script>';
 }
 
 // Cerrar la conexión

@@ -1,6 +1,5 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php';
 
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
@@ -28,7 +27,7 @@
 
     // Cerrar la conexión a la base de datos.
     $con->close();
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -49,7 +48,6 @@
                 // Cargar la librería de visualización y preparar la función para dibujar la gráfica.
                 google.charts.load('current', {'packages':['corechart']});
                 google.charts.setOnLoadCallback(drawChart);
-
                 function drawChart() {
                     var data = google.visualization.arrayToDataTable([
                         ['Categoría', 'Suma'],
@@ -57,12 +55,10 @@
                         ['Auditivo', <?php echo $auditivoSum; ?>],
                         ['Kinestésico', <?php echo $kinestesicoSum; ?>]
                     ]);
-
                     var options = {
                         title: 'Distribución General de Estilos de Aprendizaje',
                         is3D: true,
                     };
-
                     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
                     chart.draw(data, options);
                 }
@@ -71,7 +67,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_jefe.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -103,6 +99,7 @@
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-test3.php">Honey Alonso</a>
                                     <a class="nav-link" href="pnl_test2.php">Modelo PNL</a>
+                                    <a class="nav-link" href="#">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -120,7 +117,6 @@
                     </div>
                 </nav>
             </div>
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -131,31 +127,26 @@
                         </ol>
                         <div class="row">
                         <div class="container">
-                            <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje de Preferencia de Lynn O’Brien (1990).</strong></div>                        
-                            <!-- Div para la gráfica de pastel -->
-                            <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-                        
+                        <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje de Preferencia de Lynn O’Brien (1990).</strong></div>                        
+                        <!-- Div para la gráfica de pastel -->
+                        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
                         <!-- Linea separador -->
-                        <div class="card mb-4">
-                        </div>
-                        <!-- Fin Linea separador -->
-                        </div>
+                        <div class="card mb-4"></div><!-- Fin Linea separador -->
+                    </div>
                 </main>
-                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                &middot;
+                                    &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>
                 </footer>
             </div> <!-- Fin del <div id="layoutSidenav_content"> -->
-        
         </div> <!-- Fin del <div id="layoutSidenav"> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>
