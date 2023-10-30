@@ -53,7 +53,7 @@ session_start();
               die();
             }else{
               echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";
-              echo "<script>window.location.href = 'dash_alumno.php';</script>";
+              echo "<script>window.location.href = 'index.php';</script>";
             }   
           }
         ?>
