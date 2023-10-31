@@ -87,9 +87,6 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Resultados del:</h1>
                         <h3 class="mt-4">Canal de Aprendizaje Cuestionario Riesgos Psicosociales</h3>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Vista Jefe de Área</li>
-                        </ol>
                         <div class="row">
                         <div class="container">
                         <!-- Tabla y procesos -->
@@ -207,11 +204,6 @@
                                                             data: data,
                                                             options: options
                                                         });
-                                                    </script>
-                                                    <script>
-                                                        function goBack() {
-                                                            window.history.back();
-                                                        }
                                                     </script>
                                                 </div>
                                             </div>
