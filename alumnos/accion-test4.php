@@ -49,7 +49,7 @@ session_start();
             $result = $con->query($query);
             if ($result==true) {
               echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
-              echo "<script>window.location.href = 'dash_alumno.php';</script>";           
+              echo "<script>window.location.href = 'index.php';</script>";           
               die();
             }else{
               echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";

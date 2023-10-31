@@ -57,7 +57,7 @@
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-test3.php">Honey Alonso</a>
                                     <a class="nav-link" href="pnl_test2.php">Modelo PNL</a>
-                                    <a class="nav-link" href="#">Riesgos Psicosociales</a>
+                                    <a class="nav-link" href="test4.php">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -173,15 +173,6 @@
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Cuestionario de Riesgos Psicosociales</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="ver_test3.php">Resultados</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Riesgos Psicosociales</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="ver_test4.php">Resultados</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>

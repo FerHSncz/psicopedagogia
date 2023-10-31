@@ -19,7 +19,7 @@
     // Calcular la suma de cada categoría.
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $activoSum += $row['p3'] + $row['5'] + $row['p7'] + $row['9'] + $row['p13'] + $row['p20'] + $row['p26'] + $row['p27'] + $row['p35'] + $row['p37'] + $row['p41'] + $row['p43'] + $row['p46'] + $row['p48'] + $row['p51'] + $row['p61'] + $row['p67'] + $row['p74'] + $row['p75'] + $row['p77'];
+            $activoSum += $row['p3'] + $row['p5'] + $row['p7'] + $row['p9'] + $row['p13'] + $row['p20'] + $row['p26'] + $row['p27'] + $row['p35'] + $row['p37'] + $row['p41'] + $row['p43'] + $row['p46'] + $row['p48'] + $row['p51'] + $row['p61'] + $row['p67'] + $row['p74'] + $row['p75'] + $row['p77'];
             $reflexivoSum += $row['p10'] + $row['p16'] + $row['p18'] + $row['p19'] + $row['p28'] + $row['p31'] + $row['p32'] + $row['p34'] + $row['p36'] + $row['p39'] + $row['p42'] + $row['p44'] + $row['p49'] + $row['p55'] + $row['p58'] + $row['p63'] + $row['p65'] + $row['p69'] + $row['p70'] + $row['p79'];
             $teoricoSum += $row['p2'] + $row['p4'] + $row['p6'] + $row['p11'] + $row['p15'] + $row['p17'] + $row['p21'] + $row['p23'] + $row['p25'] + $row['p29'] + $row['p33'] + $row['p45'] + $row['p50'] + $row['p54']  + $row['p60'] + $row['p64']  + $row['p66'] + $row['p71']  + $row['p78'] + $row['p80'];
             $pragmaticoSum += $row['p1'] + $row['p8'] + $row['p12'] + $row['p14'] + $row['p22'] + $row['p24'] + $row['p30'] + $row['p38'] + $row['p40'] + $row['p47'] + $row['p52'] + $row['p53'] + $row['p56'] + $row['p57']  + $row['p59'] + $row['p62']  + $row['p68'] + $row['p72']  + $row['p73'] + $row['p76'];
@@ -78,7 +78,7 @@ $con->close();
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-test3.php">Honey Alonso</a>
                                     <a class="nav-link" href="pnl_test2.php">Modelo PNL</a>
-                                    <a class="nav-link" href="#">Riesgos Psicosociales</a>
+                                    <a class="nav-link" href="test4.php">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

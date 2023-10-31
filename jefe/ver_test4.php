@@ -21,6 +21,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
 		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -86,6 +88,10 @@
                         <div class="row">
                         <div class="container">
                         <!-- Tabla y procesos -->
+                        
+
+
+
                         <table class="table table-striped text-center">
                             <div class="font-monospace">La siguiente tabla muestra información solamente de los alumnos que han realizado el <strong>Test de Canal de Aprendizaje Cuestionario Riesgos Psicosociales</strong></div>
                             <br>
@@ -110,7 +116,7 @@
                                         die("Error de conexión a la base de datos: " . $con->connect_error);
                                     }
                                     // Realizar la consulta SQL
-                                    $sql = "SELECT * FROM honey";
+                                    $sql = "SELECT * FROM riesgospsicosociales";
                                     $result = $con->query($sql);
                                     // Restablecer el puntero del resultado de la consulta al principio
                                     mysqli_data_seek($result, 0);
@@ -147,10 +153,10 @@
                                                 <div class="modal-body" id="modalContent<?php echo $mostrar['id']; ?>">
                                                     <p><strong>ID: </strong><?php echo $mostrar['id']; ?></p>
                                                     <p><strong>Nombre: </strong><?php echo $mostrar['nombre']; ?></p>
-                                                    <p><strong>ACTIVO: </strong><?php echo $AprendizajeSum; ?></p>
-                                                    <p><strong>REFLEXIVO: </strong><?php echo $PsicoemocionalSum; ?></p>
-                                                    <p><strong>TEORICO: </strong><?php echo $SocialSum; ?></p>
-                                                    <p><strong>PRAGMATICO: </strong><?php echo $ProyectoSum; ?></p>
+                                                    <p><strong>Aprendizaje: </strong><?php echo $AprendizajeSum; ?></p>
+                                                    <p><strong>Psicoemocional: </strong><?php echo $PsicoemocionalSum; ?></p>
+                                                    <p><strong>Social: </strong><?php echo $SocialSum; ?></p>
+                                                    <p><strong>Proyecto: </strong><?php echo $ProyectoSum; ?></p>
                                                     <!-- DIV para mostrar el grafico -->
                                                     <div id="chart_div<?php echo $mostrar['id']; ?>"></div>
                                                 </div>
@@ -180,11 +186,11 @@
                                     $ProyectoSum = $mostrar['p4'] + $mostrar['p8'] + $mostrar['p12'] + $mostrar['p16'] + $mostrar['p20'];
                                   // Crear un array para los datos del gráfico
                                     $chartData = array(
-                                        array('Tipo', 'Cantidad'),
-                                        array('Activo', $AprendizajeSum),
-                                        array('Reflexivo', $PsicoemocionalSum),
-                                        array('Teorico', $SocialSum),
-                                        array('Pragmatico', $ProyectoSum)
+                                        array('Tipo', 'a'),
+                                        array('Aprendizaje', $AprendizajeSum),
+                                        array('Psicoemocional', $PsicoemocionalSum),
+                                        array('Social', $SocialSum),
+                                        array('Proyecto', $ProyectoSum)
                                     );
                                     // Convertir el array de PHP en un array de JavaScript usando json_encode
                                     $chartDataJson = json_encode($chartData);

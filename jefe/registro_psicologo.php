@@ -56,7 +56,7 @@
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-alonso1.html">Honey Alonso</a>
                                     <a class="nav-link" href="PNL.html">Modelo PNL</a>
-                                    <a class="nav-link" href="#">Riesgos Psicosociales</a>
+                                    <a class="nav-link" href="test4.php">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
