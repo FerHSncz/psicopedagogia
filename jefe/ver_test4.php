@@ -28,6 +28,7 @@
 		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- chart.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -154,13 +155,11 @@
                                                     <p><strong>Aprendizaje: </strong><?php echo $AprendizajeSum; ?></p>
                                                     <p><strong>Psicoemocional: </strong><?php echo $PsicoemocionalSum; ?></p>
                                                     <p><strong>Social: </strong><?php echo $SocialSum; ?></p>
-                                                    <p><strong>Proyecto: </strong><?php echo $ProyectoSum; ?></p>
+                                                    <p><strong>Proyecto: </strong><?php echo $ProyectoSum; ?></p> 
+                                                    <div style="width: 450px; height: 450px"> <!-- canvas de la grafica -->
                                                     <!-- cdn chart js -->
-                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-                                                    <!-- canvas de la grafica -->
-                                                    <canvas id="chart1" style="display: block;box-sizing: border-box;height: 50px;width: 50px;background: white;"></canvas>
-                                                    <!-- script de la grafica -->
-                                                    <script>
+                                                        <canvas id="chart1" style="display: block;box-sizing: border-box;height: 100px;width: 100px;background: white;"></canvas>
+                                                        <script>
                                                         var ctx = document.getElementById("chart1");
                                                         var data = {
                                                             labels: ["Aprendizaje", "Psicoemocional", "Social", "Proyecto"],
@@ -205,6 +204,8 @@
                                                             options: options
                                                         });
                                                     </script>
+                                                    </div>
+                                                    <!-- script de la grafica -->
                                                 </div>
                                             </div>
                                         </div>

@@ -1,12 +1,11 @@
-<?php
+<?php include '../config.php';
     session_start();
-    include '../config.php';
 
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
-    header("location: index.php");
-    exit();
-}
+        header("location: index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Jefe de Área | Ver Resultados Individuales</title>
         <!-- Estilos CSS locales -->
-		<link href="css/styles.css" rel="stylesheet" />
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
@@ -174,6 +173,7 @@
                             <?php
                             // Restablecer el puntero del resultado de la consulta al principio
                             mysqli_data_seek($result, 0);
+                            // Realizar el while por cada categoria segun los valores a sumar
                             while ($mostrar = mysqli_fetch_array($result)) {
                                 // Extraer datos para la fila actual
                                 $activoSum = $mostrar['p3'] + $mostrar['p5'] + $mostrar['p7'] + $mostrar['p9'] + $mostrar['p13'] + $mostrar['p20'] + $mostrar['p26'] + $mostrar['p27'] + $mostrar['p35'] + $mostrar['p37'] + $mostrar['p41'] + $mostrar['p43'] + $mostrar['p46'] + $mostrar['p48'] + $mostrar['p51'] + $mostrar['p61'] + $mostrar['p67'] + $mostrar['p74'] + $mostrar['p75'] + $mostrar['p77'];
