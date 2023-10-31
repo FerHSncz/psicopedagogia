@@ -17,6 +17,11 @@
         <title>Jefe de Área | Ver Resultados Individuales</title>
         <!-- Estilos CSS locales -->
 		<link href="../css/styles.css" rel="stylesheet" />
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
@@ -59,7 +64,7 @@
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
                                     <a class="nav-link" href="honey-test3.php">Honey Alonso</a>
                                     <a class="nav-link" href="pnl_test2.php">Modelo PNL</a>
-                                    <a class="nav-link" href="#">Riegos Psicosociales</a>
+                                    <a class="nav-link" href="test4.php">Riegos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -88,10 +93,6 @@
                         <div class="row">
                         <div class="container">
                         <!-- Tabla y procesos -->
-                        
-
-
-
                         <table class="table table-striped text-center">
                             <div class="font-monospace">La siguiente tabla muestra información solamente de los alumnos que han realizado el <strong>Test de Canal de Aprendizaje Cuestionario Riesgos Psicosociales</strong></div>
                             <br>
@@ -157,8 +158,61 @@
                                                     <p><strong>Psicoemocional: </strong><?php echo $PsicoemocionalSum; ?></p>
                                                     <p><strong>Social: </strong><?php echo $SocialSum; ?></p>
                                                     <p><strong>Proyecto: </strong><?php echo $ProyectoSum; ?></p>
-                                                    <!-- DIV para mostrar el grafico -->
-                                                    <div id="chart_div<?php echo $mostrar['id']; ?>"></div>
+                                                    <!-- cdn chart js -->
+                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+                                                    <!-- canvas de la grafica -->
+                                                    <canvas id="chart1" style="display: block;box-sizing: border-box;height: 50px;width: 50px;background: white;"></canvas>
+                                                    <!-- script de la grafica -->
+                                                    <script>
+                                                        var ctx = document.getElementById("chart1");
+                                                        var data = {
+                                                            labels: ["Aprendizaje", "Psicoemocional", "Social", "Proyecto"],
+                                                            datasets: [{
+                                                                label: 'Perfil de Aprendizaje',
+                                                                data:[
+                                                                    <?php echo $AprendizajeSum; ?>,
+                                                                    <?php echo $PsicoemocionalSum; ?>,
+                                                                    <?php echo $SocialSum; ?>,
+                                                                    <?php echo $ProyectoSum; ?>
+                                                                ],
+                                                                backgroundColor: [ "#000000"],
+                                                                borderColor: "#000000",
+                                                                pointBackgroundColor: [
+                                                                    "#05AD3C", // Color del primer punto (ACTIVO)
+                                                                    "#D70000", // Color del segundo punto (REFLEXIVO)
+                                                                    "#FFFF00", // Color del tercer punto (TEORICO)
+                                                                    "#00B8DF" // Color del cuarto punto (PRAGMATICO)
+                                                                ],
+                                                                borderWidth: 1,
+                                                                fill: false
+                                                            },]
+                                                        };
+                                                        var options = {
+                                                            maintainAspectRatio: true,
+                                                            spanGaps: false,
+                                                            scales: {
+                                                                r: {
+                                                                    beginAtZero: true,
+                                                                    stepSize: 0.01
+                                                                }
+                                                            },
+                                                            elements: {
+                                                                line: {
+                                                                    tension: 0.01
+                                                                }
+                                                            },
+                                                        };
+                                                        var chart1 = new Chart(ctx, {
+                                                            type: 'radar',
+                                                            data: data,
+                                                            options: options
+                                                        });
+                                                    </script>
+                                                    <script>
+                                                        function goBack() {
+                                                            window.history.back();
+                                                        }
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>
@@ -171,42 +225,6 @@
                         </div>
                         <!-- API de Google Charts  -->
                         <script src="https://www.gstatic.com/charts/loader.js"></script>
-                        <script>
-                            google.charts.load('current', {'packages':['corechart']});
-                            google.charts.setOnLoadCallback(drawCharts);
-                            function drawCharts() {
-                                <?php
-                                // Restablecer el puntero del resultado de la consulta al principio
-                                mysqli_data_seek($result, 0);
-                                while ($mostrar = mysqli_fetch_array($result)) {
-                                  // Extraer datos para la fila actual
-                                    $AprendizajeSum = $mostrar['p1'] + $mostrar['p5'] + $mostrar['p9'] + $mostrar['p13'] + $mostrar['p17'];
-                                    $PsicoemocionalSum = $mostrar['p2'] + $mostrar['p6'] + $mostrar['p10'] + $mostrar['p14'] + $mostrar['p18'];
-                                    $SocialSum = $mostrar['p3'] + $mostrar['p7'] + $mostrar['p11'] + $mostrar['p15'] + $mostrar['p19'];
-                                    $ProyectoSum = $mostrar['p4'] + $mostrar['p8'] + $mostrar['p12'] + $mostrar['p16'] + $mostrar['p20'];
-                                  // Crear un array para los datos del gráfico
-                                    $chartData = array(
-                                        array('Tipo', 'a'),
-                                        array('Aprendizaje', $AprendizajeSum),
-                                        array('Psicoemocional', $PsicoemocionalSum),
-                                        array('Social', $SocialSum),
-                                        array('Proyecto', $ProyectoSum)
-                                    );
-                                    // Convertir el array de PHP en un array de JavaScript usando json_encode
-                                    $chartDataJson = json_encode($chartData);
-                                ?>
-                                var data<?php echo $mostrar['id']; ?> = google.visualization.arrayToDataTable(<?php echo $chartDataJson; ?>);
-                                var options<?php echo $mostrar['id']; ?> = {
-                                    title: 'Tipo de Aprendizaje',
-                                    is3D: true,
-                                };
-                                var chart<?php echo $mostrar['id']; ?> = new google.visualization.LineChart(document.getElementById('chart_div<?php echo $mostrar['id']; ?>'));
-                                chart<?php echo $mostrar['id']; ?>.draw(data<?php echo $mostrar['id']; ?>, options<?php echo $mostrar['id']; ?>);
-                            <?php
-                            }
-                            ?>
-                            }
-                        </script>                                                                   
                     </div>
                     <!-- Linea separador -->
                     <div class="card mb-4"></div>
