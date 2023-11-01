@@ -158,9 +158,9 @@
                                                     <p><strong>Proyecto: </strong><?php echo $ProyectoSum; ?></p> 
                                                     <div style="width: 450px; height: 450px"> <!-- canvas de la grafica -->
                                                     <!-- cdn chart js -->
-                                                        <canvas id="chart1" style="display: block;box-sizing: border-box;height: 100px;width: 100px;background: white;"></canvas>
+                                                        <canvas id="<?php echo $mostrar['id']; ?>" style="display: block;box-sizing: border-box;height: 100px;width: 100px;background: white;"></canvas>
                                                         <script>
-                                                        var ctx = document.getElementById("chart1");
+                                                        var ctx = document.getElementById("<?php echo $mostrar['id']; ?>");
                                                         var data = {
                                                             labels: ["Aprendizaje", "Psicoemocional", "Social", "Proyecto"],
                                                             datasets: [{
