@@ -20,7 +20,20 @@
         }
     }
 
-    // Cerrar la conexión a la base de datos.
-    $con->close();
+    //Llamar numero de filas para hacer la division
+    
+    $dividendo = "SELECT * FROM honey";
+    
+    $resultado = $con->query($dividendo);
+    $numTests = $resultado->num_rows;
 
+    //Sacando division para la grafica general
+
+    $activo = $activoSum / $numTests;
+    $reflexivo = $reflexivoSum / $numTests;
+    $teorico = $teoricoSum / $numTests;
+    $pragmatico = $pragmaticoSum / $numTests;
+    
+    // Cerrar la conexión a la base de datos.
+    //$con->close();
 ?>

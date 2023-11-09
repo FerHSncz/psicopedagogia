@@ -1,7 +1,7 @@
 <?php 
     include '../config.php';            // Configuraciond del acceso a la base de datos
     include 'php/operacion-test3.php';  // Operacion que se lleva acabo para calcular la grafica global
-    include 'php/if-no-session.php';    // Si el usuario no tiene la sesion iniciada será redirigido al inicio de sesion
+    include 'php/session.php';    // Si el usuario no tiene la sesion iniciada será redirigido al inicio de sesion
 ?>
 
 <!DOCTYPE html>
@@ -97,10 +97,10 @@
                                     datasets: [{
                                         label: 'Perfil de Aprendizaje',
                                         data:[
-                                            <?php echo $activoSum;; ?>,
-                                            <?php echo $reflexivoSum; ?>,
-                                            <?php echo $teoricoSum; ?>,
-                                            <?php echo $pragmaticoSum; ?>
+                                            <?php echo $activo; ?>,
+                                            <?php echo $reflexivo; ?>,
+                                            <?php echo $teorico; ?>,
+                                            <?php echo $pragmatico; ?>
                                         ],
                                         backgroundColor: [ "#000000"],
                                         borderColor: "#000000",
