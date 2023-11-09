@@ -1,34 +1,10 @@
-<?php include '../config.php';
-    session_start();
-	/*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
+<?php 
+	include '../config.php';
+	include 'php/sesion.php';
+	include 'php/accion-test3.php';
+	include 'recursos/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>Test 3 - Canal de Aprendizaje de Preferencia</title>
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-		<!-- Estilos CSS locales -->
-		<link rel="stylesheet" href="../css/estilos.css">
-		<link rel="stylesheet" href="../css/centrar.css">		
-	</head>
-	<body>
-		<!-- Barra de navegación -->
-		<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="index.php"><strong style="color: red;"></strong></a>
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="ver.php"><strong></strong></a>
-				</li>
-			</ul>
-		</nav>
-		<!-- Fin de la Barra de navegación -->
 		<!-- Inicio de Formulario -->
-		<h1 align="center" style="padding: 0px;"><strong></strong></h1>
 		<div class="container">
 			<img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
 		</div>      	
@@ -777,19 +753,8 @@
 			</form>
 		</div>
 	</div>
+	<script src="js/progreso3.js"></script>
+<?php
+	include 'recursos/footer.php';
+?>
 
-		<?php
-			// include("registrar.php");
-		?>
-
-		<script>
-			function actualizarProgreso() {
-				var preguntasRespondidas = document.querySelectorAll('input[type="radio"]:checked').length;
-				var progressBar = document.getElementById('progress-bar');
-				var porcentajeCompletado = (preguntasRespondidas / 80) * 100;
-				progressBar.style.width = porcentajeCompletado + "%";
-				progressBar.innerHTML = "Faltan " + (80 - preguntasRespondidas) + " oraciones";
-			}
-		</script>
-	</body>
-</html>

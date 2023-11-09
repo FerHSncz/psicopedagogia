@@ -1,21 +1,4 @@
 <?php
-session_start();
-?>
-
-<!DOCTYPE html>
-  <html lang="es">
-    <head>
-      <title>Guardando...</title>
-      <!-- Required meta tags -->
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    </head>
-    <body>
-      <div class="container">
-        <?php
         // Obtener el nombre del usuario desde la variable de sesión
         $nombreUsuario = $_SESSION['nombre'];
 
@@ -44,8 +27,24 @@ session_start();
             $p18 = $con->real_escape_string($_POST['p18']);
             $p19 = $con->real_escape_string($_POST['p19']);
             $p20 = $con->real_escape_string($_POST['p20']);
+            $p21 = $con->real_escape_string($_POST['p21']);
+            $p22 = $con->real_escape_string($_POST['p22']);
+            $p23 = $con->real_escape_string($_POST['p23']);
+            $p24 = $con->real_escape_string($_POST['p24']);
+            $p25 = $con->real_escape_string($_POST['p25']);
+            $p26 = $con->real_escape_string($_POST['p26']);
+            $p27 = $con->real_escape_string($_POST['p27']);
+            $p28 = $con->real_escape_string($_POST['p28']);
+            $p29 = $con->real_escape_string($_POST['p29']);
+            $p30 = $con->real_escape_string($_POST['p30']);
+            $p31 = $con->real_escape_string($_POST['p31']);
+            $p32 = $con->real_escape_string($_POST['p32']);
+            $p33 = $con->real_escape_string($_POST['p33']);
+            $p34 = $con->real_escape_string($_POST['p34']);
+            $p35 = $con->real_escape_string($_POST['p35']);
+            $p36 = $con->real_escape_string($_POST['p36']);
 
-            $query  = "INSERT INTO riesgospsicosociales (nombre, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20) VALUES ('$nombreUsuario', '$p1','$p2','$p3', '$p4', '$p5', '$p6', '$p7', '$p8', '$p9', '$p10', '$p11', '$p12', '$p13', '$p14', '$p15', '$p16', '$p17', '$p18', '$p19', '$p20')";
+            $query  = "INSERT INTO test1 (nombre, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36) VALUES ('$nombreUsuario', '$p1','$p2','$p3', '$p4', '$p5', '$p6', '$p7', '$p8', '$p9', '$p10', '$p11', '$p12', '$p13', '$p14', '$p15', '$p16', '$p17', '$p18', '$p19', '$p20', '$p21', '$p22', '$p23', '$p24', '$p25', '$p26', '$p27', '$p28', '$p29', '$p30', '$p31', '$p32', '$p33', '$p34', '$p35', '$p36')";
             $result = $con->query($query);
             if ($result==true) {
               echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
@@ -56,12 +55,4 @@ session_start();
               echo "<script>window.location.href = 'index.php';</script>";
             }   
           }
-        ?>
-      </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    </body>
-</html>
+?>
