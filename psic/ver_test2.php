@@ -1,12 +1,6 @@
 <?php
-    session_start();
     include '../config.php';
-
-    /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
-    if (!isset($_SESSION['email'])) {
-    header("location: index.php");
-    exit();
-}
+    include 'php/session.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Jefe de Área | Ver Resultados Individuales</title>
         <!-- Estilos CSS locales -->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
@@ -82,7 +76,7 @@
                         <h1 class="mt-4">Resultados del:</h1>
                         <h3 class="mt-4">Canal de Aprendizaje Modelo PNL</h3>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Vista Jefe de Área</li>
+                            <li class="breadcrumb-item active">Vista Psicologo</li>
                         </ol>
                         <div class="row">
                         <div class="container">

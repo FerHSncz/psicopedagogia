@@ -1,11 +1,6 @@
-<?php include '../config.php';
-    session_start();
-
-    /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
-    if (!isset($_SESSION['email'])) {
-        header("location: index.php");
-        exit();
-    }
+<?php 
+    include '../config.php';
+    include 'php/session.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Psicologo | Dashboard</title>
         <!-- Estilos CSS locales -->
-		<link href="css/styles.css" rel="stylesheet" />
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
         <!-- Fontawesome -->
@@ -147,12 +142,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Linea separador -->
-                        <div class="card mb-4">
-                        </div>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
+                    <!-- Linea separador -->
+                    <div class="card mb-4"></div>
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>

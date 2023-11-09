@@ -1,50 +1,7 @@
 <?php
-    session_start();
-    include '../config.php'; 
-    
-    /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
-    if (!isset($_SESSION['email'])) {
-    header("location: index.php");
-    exit();
-}
-
-// Función para cifrar la contraseña usando password_hash()
-function encryptPassword($password) {
-    return password_hash($password, PASSWORD_DEFAULT);
-}
-
-// Variable para almacenar el mensaje de éxito o error
-$mensaje = '';
-
-// Verificar si se envió el formulario para cambiar la contraseña
-if (isset($_POST['password'])) {
-    // Obtener el ID del psicólogo a partir del email del usuario que ha iniciado sesión
-    $email_usuario = $_SESSION['email'];
-
-    // Obtener la nueva contraseña desde el formulario (asegúrate de validar y sanear los datos del formulario)
-    $new_pass = $_POST['password'];
-
-    // Cifrar la nueva contraseña
-    $pass_cifrada = encryptPassword($new_pass);
-
-    // Actualizar la contraseña en la base de datos para el usuario con el email correspondiente
-    $query = "UPDATE psicologos SET password = ? WHERE email = ?";
-    $stmt = $con->prepare($query);
-    $stmt->bind_param("ss", $pass_cifrada, $email_usuario);
-    $result = $stmt->execute();
-
-    if ($result) {
-        //$mensaje = 'Contraseña actualizada con éxito.';
-        echo "<script>alert('Contraseña actualizada con éxito.'); window.location.href = 'dash_psic.php';</script>";
-    } else {
-        $mensaje = 'Error al actualizar la contraseña: ' . $stmt->error;
-    }
-
-    $stmt->close();
-}
-
-// Cerrar la conexión a la BD
-$con->close();
+    include '../config.php';
+    include 'php/session.php';
+    include 'php/change-pass.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -55,21 +12,20 @@ $con->close();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Psicologo | Cambiar contraseña</title>
         <!-- Estilos CSS locales -->
-		<link href="css/styles.css" rel="stylesheet" />
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- Fontawesome -->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dash_psic.php">Psicopedagogia</a>
+            <a class="navbar-brand ps-3" href="index.php">Psicopedagogia</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conectado como: 
-                        <?php echo ($_SESSION['nombre']); //Muestro el nombre de quien inicio sesion?><i class="fas fa-user fa-fw"></i>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conectado como: <?php echo ($_SESSION['nombre']); //Muestro el nombre de quien inicio sesion?><i class="fas fa-user fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="logout.php">Cerrar sesion</a></li>
@@ -93,7 +49,7 @@ $con->close();
                             <div class="collapse show" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="ver_alumnos_test1global.php">Linn O´Brien</a>
-                                    <a class="nav-link" href="honey-alonso1.html">Honey Alonso</a>
+                                    <a class="nav-link" href="honey-test3.php">Honey Alonso</a>
                                     <a class="nav-link" href="PNL.html">Modelo PNL</a>
                                 </nav>
                             </div>

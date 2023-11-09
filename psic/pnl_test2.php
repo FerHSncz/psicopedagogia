@@ -3,7 +3,7 @@
 
     /*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
     if (!isset($_SESSION['email'])) {
-        header("location: index.php");
+        header("location: ../index.php");
         exit();
     }
     // Conexión utilizando las variables del archivo config_db.php

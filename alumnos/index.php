@@ -148,7 +148,8 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar Sesion</button>
+              <a class="btn btn-danger" href="logout.php" role="button">Cerrar Sesion</a>
+
             </div>
           </div>
         </div>
