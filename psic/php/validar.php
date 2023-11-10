@@ -1,6 +1,4 @@
-<?php // Incluir el archivo de config.php externo
-include '../config.php';
-
+<?php 
 // Obtener los datos del formulario
 $email = $_POST['email'];
 $password = $_POST['password'];

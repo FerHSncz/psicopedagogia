@@ -6,6 +6,8 @@
     <title>Iniciar sesión</title>
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
+    <!-- Icono -->
+    <link rel="shortcut icon" href="favicon.ico">
     <!-- Estilos CSS locales -->
     
     <!-- CSS Animate.css -->
