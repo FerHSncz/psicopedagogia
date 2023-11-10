@@ -26,24 +26,10 @@
                                 </thead>
                             </table>
                         </div>
-                            <script>
-                                $(document).ready(function() {
-                                  // Inicializar la tabla
-                                $('#tablaAlumnos').DataTable({
-                                    "ajax": "get-alumnos.php", // Ruta al archivo PHP que obtiene los datos de los alumnos
-                                    "columns": [
-                                        { "data": "id" },
-                                        { "data": "nombre" },
-                                        { "data": "telefono" },
-                                        { "data": "carrera" },
-                                        { "data": "email" }
-                                    ]
-                                });
-                                });
-                            </script>
                         </div><br>
                     </div>
                 </main>
+                <script src="js/alumnos.js"></script>
 <?php 
     include 'recursos/footer.php';
 ?>

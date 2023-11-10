@@ -33,23 +33,10 @@
                             <!-- DataTables JS para la paginacion-->
                             <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
                             <!-- Script de datos de alumnos -->
-                            <script>
-                                $(document).ready(function() {
-                                  // Inicializar la tabla
-                                    $('#tablaPsicologos').DataTable({
-                                        "ajax": "get-psicologos.php", // Ruta al archivo PHP que obtiene los datos de los alumnos
-                                        "columns": [
-                                            { "data": "id" },
-                                            { "data": "nombre" },
-                                            { "data": "email" },
-                                            { "data": "telefono" }                                                             
-                                        ]
-                                    });
-                                });
-                            </script>
                         </div>
                     </div>
                 </main>
+                <script src="js/psicogolos.js"></script>
 <?php 
     include 'recursos/footer.php';
 ?>
