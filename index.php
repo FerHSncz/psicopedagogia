@@ -7,7 +7,7 @@
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <!-- Icono -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Estilos CSS locales -->
     
     <!-- CSS Animate.css -->
