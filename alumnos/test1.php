@@ -1,40 +1,15 @@
 <?php
-    session_start();
     include '../config.php'; 
-	/*Este codigo manda al archivo index.html si se trata de ingresar al dashboard sin haber iniciado sesion*/
+	include 'php/sesion.php';
+	include 'php/accion-test1.php';
+	include 'recursos/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>Test 1 - Canal de Aprendizaje de Preferencia</title>
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-		<!-- Estilos CSS locales -->
-		<link rel="stylesheet" href="../css/estilos.css">
-		<link rel="stylesheet" href="../css/centrar.css">		
-	</head>
-	<body>
-		<!-- Barra de navegación -->
-		<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="index.php"><strong style="color: red;"></strong></a>
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="ver.php"><strong></strong></a>
-				</li>
-			</ul>
-		</nav>
-		<!-- Fin de la Barra de navegación -->
 		<!-- Inicio de Formulario -->
-		<h1 align="center" style="padding: 0px;"><strong></strong></h1>
-		<div class="container">
-            <img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
-		</div>      	
-		<div class="container mt-2">
-			<form id="formulario" action="respuestas.php" method="POST" autocomplete="off">
+		<div class="mt-2">
+			<div class="">
+				<img style=" margin:10px auto; display:block;" class="margin-auto d-blo" src="../img/UTCGG.png" width="55" height="50" align="">
+			</div>
+			<form id="formulario" action="accion-test1.php" method="POST" autocomplete="off">
 				<div class=""> <!-- row <input type="submit" value="Siguiente" name="registro">-->
 					<style> table tr:hover{ background-color: #bbd6ef !important; } </style>
 					<table width="100%" name="aprendizaje" class="table table-striped table-bordered table-hover">
@@ -700,24 +675,14 @@
 							</tr>				
 						</tbody>
 					</table>
-						<div class="col-lg-2" style="margin: 0 auto; padding: -12px;">
-							<input type="submit" name="submit" class="btn btn-success" value="Guardar">
-						</div>
+					<div class="col-lg-2" style="margin: 0 auto; padding: -12px;">
+						<input type="submit" name="submit" class="btn btn-success" value="Guardar">
 					</div>
-				</form>
-			</div>
+					<br>
+				</div>
+			</form>
 		</div>
-		<?php
-			// include("registrar.php");
-		?>
-		<script>
-			function actualizarProgreso() {
-				var preguntasRespondidas = document.querySelectorAll('input[type="radio"]:checked').length;
-				var progressBar = document.getElementById('progress-bar');
-				var porcentajeCompletado = (preguntasRespondidas / 36) * 100;
-				progressBar.style.width = porcentajeCompletado + "%";
-				progressBar.innerHTML = "Faltan " + (36 - preguntasRespondidas) + " oraciones";
-			}
-		</script>
-	</body>
-</html>
+		<script src="js/progreso.js"></script>
+<?php
+	include 'recursos/footer.php';
+?>

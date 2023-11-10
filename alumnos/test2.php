@@ -1,26 +1,9 @@
-<?php include("accion-pnl.php"); ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/centrar.css">
-    <link rel="stylesheet" href="../css/letra.css">
-    <title>TEST</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="index.php"><strong style="color: red;"></strong></a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="ver.php"><strong></strong></a>
-            </li>
-        </ul>
-    </nav>
+<?php 
+    include '../config.php';
+    include 'php/sesion.php';
+    include 'php/accion-test2.php'; 
+    include 'recursos/header.php';
+?>
     <div class="container">
         <img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
     </div>
@@ -472,6 +455,7 @@
                             </select>
                         </div>
                     </div>
+                    <br>
                     <div class="col-lg-2" style="margin: 0 auto; padding: -12px;">
                         <button type="submit" name="registrar" class="btn btn-success"><a href="pnl.php"></a>Finalizar</button>
                     </div>
@@ -480,5 +464,6 @@
         </div>
     </div>
     <br>
-</body>
-</html>
+<?php 
+    include 'recursos/footer.php';
+?>

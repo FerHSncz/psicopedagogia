@@ -1,5 +1,4 @@
-<?php include_once('../config.php');
-session_start();
+<?php
 
 // Obtener el nombre del usuario desde la variable de sesión
 $nombreUsuario = $_SESSION['nombre'];
@@ -90,11 +89,11 @@ if (isset($_POST['submit'])) {
 
   if ($result==true) {
     echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
-    echo "<script>window.location.href = 'dash_alumno.php';</script>";           
+    echo "<script>window.location.href = 'index.php';</script>";           
     die();
   }else{
     echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";
-    echo "<script>window.location.href = 'dash_alumno.php';</script>";
+    echo "<script>window.location.href = 'index.php';</script>";
   }   
 }
 ?>
