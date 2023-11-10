@@ -4,6 +4,7 @@
     include 'php/global-test4.php';
     include 'recursos/header.php';
 ?>
+            <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Resultado Global del:</h1>
                     <h3 class="mt-4">Canal de Aprendizaje Cuestionario de Riesgos Psicosociales</h3>
@@ -65,6 +66,7 @@
                         options: options
                     });
                 </script>
+                </main>
 <?php 
     include 'recursos/footer.php';
 ?>

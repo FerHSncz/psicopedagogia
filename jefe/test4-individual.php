@@ -135,8 +135,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- API de Google Charts  -->
-                        <script src="https://www.gstatic.com/charts/loader.js"></script>
                     </div>
                 </div>
                 </main>
