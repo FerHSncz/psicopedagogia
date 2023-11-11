@@ -1,4 +1,4 @@
-                    <footer class="py-4 bg-light mt-auto">
+                <footer class="py-4 bg-light mt-auto">
                     <!-- Linea separador -->
                     <hr>
                     <div class="container-fluid px-4">
