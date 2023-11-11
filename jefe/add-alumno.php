@@ -1,12 +1,12 @@
 <?php 
-    include '../config.php'; 
-    include 'php/sesion.php';
+    include '../php/config.php'; 
+    include '../php/sesion.php';
     include 'recursos/header.php';
 ?>
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Registrar Alumno</h1><br>
-                        <form method="POST" action="php/nuevo-alumno.php" >
+                        <form method="POST" action="../php/add-alumno.php" >
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="mb-3">

@@ -1,7 +1,7 @@
 <?php
-    include '../config.php';
-    include 'php/session.php';
-    include 'recursos/header.php';
+    include '../php/config.php';
+    include '../php/sesion.php';
+    include '../recursos/header.php';
 ?>
                 <main>
                     <div class="container-fluid px-4">

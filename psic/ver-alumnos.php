@@ -1,6 +1,6 @@
 <?php 
-    include '../config.php';
-    include 'php/session.php';
+    include '../php/config.php';
+    include '../php/sesion.php';
     include 'recursos/header.php';
 ?>
                 <main>
@@ -29,7 +29,7 @@
                         </div><br>
                     </div>
                 </main>
-                <script src="js/alumnos.js"></script>
+                <script src="../js/alumnos.js"></script>
 <?php 
     include 'recursos/footer.php';
 ?>

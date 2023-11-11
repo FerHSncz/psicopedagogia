@@ -1,7 +1,7 @@
 <?php 
-    include '../config.php';            // Configuraciond del acceso a la base de datos
-    include 'php/operacion-test3.php';  // Operacion que se lleva acabo para calcular la grafica global
-    include 'php/session.php';          // Si el usuario no tiene la sesion iniciada será redirigido al inicio de sesion
+    include '../php/config.php';            // Configuraciond del acceso a la base de datos
+    include '../php/sesion.php';          // Si el usuario no tiene la sesion iniciada será redirigido al inicio de sesion
+    include '../php/global-test2.php';  // Operacion que se lleva acabo para calcular la grafica global
     include 'recursos/header.php';
 ?>
                 <main>

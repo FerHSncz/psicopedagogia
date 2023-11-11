@@ -1,6 +1,6 @@
 <?php
-    include '../config.php';
-    include 'php/session.php';
+    include '../php/config.php';
+    include '../php/sesion.php';
     include 'recursos/header.php';
 ?>
                 <main>

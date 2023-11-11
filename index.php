@@ -21,7 +21,7 @@
 <body>
     <div class="container-fluid">
         <div class="">
-        <form action="validar.php" method="post">
+        <form action="php/validar.php" method="post">
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <br><br><br>

@@ -1,13 +1,13 @@
 <?php 
-    include '../config.php'; 
-    include 'php/sesion.php';
+    include '../php/config.php'; 
+    include '../php/sesion.php';
     include 'recursos/header.php';
 ?>
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Registrar Psicólogo</h1>
                         <br>
-                        <form method="POST" action="php/nuevo-psicologo.php" >
+                        <form method="POST" action="../php/add-psicologo.php" >
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">

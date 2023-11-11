@@ -1,7 +1,4 @@
 <?php
-    // Incluir el archivo de config.php externo
-    include '../../config.php';
-
     // Obtener los datos del formulario
     $nombre = $_POST['nombre'];
     $telefono = $_POST['telefono'];

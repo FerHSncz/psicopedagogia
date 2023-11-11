@@ -1,7 +1,7 @@
 <?php 
-    include '../config.php';
-    include 'php/sesion.php';
-    include 'php/global-test3.php';
+    include '../php/config.php';
+    include '../php/sesion.php';
+    include '../php/global-test3.php';
     include 'recursos/header.php';
 ?>
                 <main>

@@ -1,7 +1,7 @@
 <?php
-    include '../config.php';
-    include 'php/session.php';
-    include 'php/change-pass.php';
+    include '../php/config.php';
+    include '../php/sesion.php';
+    include '../php/change-pass.php';
     include 'recursos/header.php';
 ?>
                 <main>
