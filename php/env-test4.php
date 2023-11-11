@@ -2,7 +2,7 @@
         // Obtener el nombre del usuario desde la variable de sesión
         $nombreUsuario = $_SESSION['nombre'];
 
-        include_once('../config.php');
+        include_once('config.php');
 
           if (isset($_POST['submit'])) {
             

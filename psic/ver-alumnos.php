@@ -1,7 +1,7 @@
 <?php 
     include '../php/config.php';
     include '../php/sesion.php';
-    include 'recursos/header.php';
+    include '../hf/psic-header.php';
 ?>
                 <main>
                     <div class="container-fluid px-4">

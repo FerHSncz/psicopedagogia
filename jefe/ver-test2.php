@@ -12,8 +12,8 @@
                             <li class="breadcrumb-item active">Vista Psicologo</li>
                         </ol>
                         <div class="row">
-                        <div class="container">
-                            <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje Cuestionario Honey-Alonso.</strong></div>
+                            <div class="container">
+                                <div class="font-monospace">A continuacion se muestra la Gráfica General de Resultados del <strong>Test de Canal de Aprendizaje Cuestionario Honey-Alonso.</strong></div>
                                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                                 <title>Resultados Finales</title>
                                 <canvas id="chart1" style="display: block;box-sizing: border-box;height: 450px;width: 450px;background: white;"></canvas>
@@ -30,7 +30,7 @@
                                         datasets: [{
                                             label: 'Perfil de Aprendizaje',
                                             data:[
-                                                <?php echo $activoSum;; ?>,
+                                                <?php echo $activoSum; ?>,
                                                 <?php echo $reflexivoSum; ?>,
                                                 <?php echo $teoricoSum; ?>,
                                                 <?php echo $pragmaticoSum; ?>
@@ -69,7 +69,9 @@
                                     });
                                 </script>
                             </div>
-                        </main>
+                        </div>
+                    </div>
+            </main>
 <?php 
     include 'recursos/footer.php';
 ?>

@@ -1,7 +1,7 @@
 <?php
     include '../php/config.php';
     include '../php/sesion.php';
-    include 'recursos/header.php';
+    include '../hf/psic-header.php';
 ?>
                 <main>
                     <div class="container-fluid px-4">
@@ -29,15 +29,6 @@
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    // Conexión utilizando las variables del archivo config_db.php
-                                    require_once('../config.php');
-                                    $con = new mysqli($hostname, $username, $password, $dbname);
-
-                                    // Verificar si la conexión fue exitosa
-                                    if ($con->connect_error) {
-                                        die("Error de conexión a la base de datos: " . $con->connect_error);
-                                    }
-
                                     // Realizar la consulta SQL
                                     $sql = "SELECT * FROM honey";
                                     $result = $con->query($sql);

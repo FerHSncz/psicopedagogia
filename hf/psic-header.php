@@ -7,14 +7,14 @@
         <title>Psicopedagogia</title>
         <!-- Icono -->
         <link rel="shortcut icon" href="../img/favicon.ico">
+        <!-- Estilos CSS locales -->
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- JQuery --> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- DataTables JS -->
         <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
         <!-- DataTables JS para la paginacion-->
         <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-        <!-- Estilos CSS locales -->
-		<link href="../css/styles.css" rel="stylesheet" />
         <!-- DataTables CSS -->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <!-- Bootstrap CSS -->
@@ -23,6 +23,11 @@
 		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google Charts -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <!-- poper -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!-- chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -36,7 +41,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conectado como: <?php echo ($_SESSION['nombre']);?><i class="fas fa-user fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="php/logout.php">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="../php/logout.php">Cerrar sesión</a></li>
                         <li><hr class="dropdown-divider"/></li>
                         <li><a class="dropdown-item" href="cambiar-pass.php">Cambiar contraseña</a></li>
                     </ul>
@@ -56,10 +61,10 @@
                             </a>
                             <div class="collapse show" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="test1-global.php">Linn O´Brien</a>
-                                    <a class="nav-link" href="test2-global.php">Honey Alonso</a>
-                                    <a class="nav-link" href="test3-global.php">Modelo PNL</a>
-                                    <a class="nav-link" href="test4-global.php">Riesgos Psicosociales</a>
+                                    <a class="nav-link" href="ver-test1.php">Linn O´Brien</a>
+                                    <a class="nav-link" href="ver-test2.php">Honey Alonso</a>
+                                    <a class="nav-link" href="ver-test3.php">Modelo PNL</a>
+                                    <a class="nav-link" href="ver-test4.php">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">

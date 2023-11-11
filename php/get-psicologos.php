@@ -1,6 +1,6 @@
 <?php
     // Incluir el archivo de configuración
-    require_once '../../config.php';
+    require_once 'config.php';
 
     // Consulta SQL para obtener todos los datos de la tabla "psicologos"
     $sql = "SELECT id, nombre, telefono, email FROM psicologos";

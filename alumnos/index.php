@@ -50,5 +50,5 @@
         <!-- MVC -->
 
 <?php 
-  include 'recursos/footer.php';
+  include '../hf/a-footer.php';
 ?>

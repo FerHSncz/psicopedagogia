@@ -1,7 +1,7 @@
 <?php 
 	include '../php/config.php';
 	include '../php/sesion.php';
-	include '../php/accion-test2.php';
+	include '../php/env-test2.php';
 	include '../hf/a-header.php';
 ?>
     <div class="container">
@@ -464,6 +464,6 @@
         </div>
     </div>
     <br>
-<?php 
-    include 'recursos/footer.php';
+<?php
+	include '../hf/a-footer.php';
 ?>

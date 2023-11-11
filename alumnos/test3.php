@@ -1,7 +1,7 @@
 <?php 
 	include '../php/config.php';
 	include '../php/sesion.php';
-	include '../php/accion-test3.php';
+	include '../php/env-test3.php';
 	include '../hf/a-header.php';
 ?>
 		<!-- Inicio de Formulario -->
@@ -755,6 +755,5 @@
 	</div>
 	<script src="js/progreso3.js"></script>
 <?php
-	include 'recursos/footer.php';
+	include '../hf/a-footer.php';
 ?>
-

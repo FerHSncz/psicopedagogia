@@ -1,7 +1,7 @@
 <?php
 	include '../php/config.php';
 	include '../php/sesion.php';
-	include '../php/accion-test4.php';
+	include '../php/env-test4.php';
 	include '../hf/a-header.php';
 ?>
 		<!-- Inicio de Formulario -->

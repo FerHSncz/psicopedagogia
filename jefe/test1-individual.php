@@ -27,13 +27,6 @@
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    // Conexión utilizando las variables del archivo config_db.php
-                                    require_once('../config.php');
-                                    $con = new mysqli($hostname, $username, $password, $dbname);
-                                    // Verificar si la conexión fue exitosa
-                                    if ($con->connect_error) {
-                                        die("Error de conexión a la base de datos: " . $con->connect_error);
-                                    }
                                     // Realizar la consulta SQL
                                     $sql = "SELECT * FROM test1";
                                     $result = $con->query($sql);

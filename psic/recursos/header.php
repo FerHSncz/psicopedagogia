@@ -36,7 +36,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conectado como: <?php echo ($_SESSION['nombre']);?><i class="fas fa-user fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="php/logout.php">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="../php/logout.php">Cerrar sesión</a></li>
                         <li><hr class="dropdown-divider"/></li>
                         <li><a class="dropdown-item" href="cambiar-pass.php">Cambiar contraseña</a></li>
                     </ul>
@@ -56,10 +56,10 @@
                             </a>
                             <div class="collapse show" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="test1-global.php">Linn O´Brien</a>
-                                    <a class="nav-link" href="test2-global.php">Honey Alonso</a>
-                                    <a class="nav-link" href="test3-global.php">Modelo PNL</a>
-                                    <a class="nav-link" href="test4-global.php">Riesgos Psicosociales</a>
+                                    <a class="nav-link" href="ver-test1.php">Linn O´Brien</a>
+                                    <a class="nav-link" href="ver-test2.php">Honey Alonso</a>
+                                    <a class="nav-link" href="ver-test3.php">Modelo PNL</a>
+                                    <a class="nav-link" href="ver-test4.php">Riesgos Psicosociales</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
