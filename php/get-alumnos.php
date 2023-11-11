@@ -1,5 +1,5 @@
 <?php
-    require_once '../../config.php';
+    require_once 'config.php';
 
     // Consulta SQL para obtener todos los datos de la tabla "alumnos"
     $sql = "SELECT id, nombre, telefono, carrera, email FROM alumnos";

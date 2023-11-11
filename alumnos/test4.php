@@ -1,8 +1,8 @@
 <?php
-    include '../config.php'; 
-	include 'php/sesion.php';
-	include 'php/accion-test4.php';
-	include 'recursos/header.php';
+	include '../php/config.php';
+	include '../php/sesion.php';
+	include '../php/accion-test4.php';
+	include '../hf/a-header.php';
 ?>
 		<!-- Inicio de Formulario -->
 		<h1 align="center" style="padding: 0px;"><strong></strong></h1>
@@ -404,5 +404,5 @@
 		<!-- Fin del Formulario -->
 		<script src="js/progreso4.js"></script>
 <?php
-	include 'recursos/footer.php';
+	include '../hf/a-footer.php';
 ?>

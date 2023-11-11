@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8"/>
@@ -7,14 +7,14 @@
         <title>Psicopedagogia</title>
         <!-- Icono -->
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <!-- Estilos CSS locales -->
-		<link href="../css/styles.css" rel="stylesheet" />
         <!-- JQuery --> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- DataTables JS -->
         <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
         <!-- DataTables JS para la paginacion-->
         <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+        <!-- Estilos CSS locales -->
+		<link href="../css/styles.css" rel="stylesheet" />
         <!-- DataTables CSS -->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <!-- Bootstrap CSS -->

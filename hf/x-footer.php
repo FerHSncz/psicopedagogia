@@ -1,12 +1,12 @@
-                    <footer class="py-4 bg-light mt-auto">
+                <footer class="py-4 bg-light mt-auto">
                     <!-- Linea separador -->
-                    <hr>
+                    <div class="card mb-4"></div>
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Psicopedagogia web</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
-                                    &middot;
+                                &middot;
                                 <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>

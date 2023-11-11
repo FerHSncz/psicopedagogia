@@ -1,7 +1,7 @@
 <?php
-  include '../config.php'; 
-  include 'php/sesion.php';
-  include 'recursos/header.php';
+  include '../php/config.php';
+  include '../php/sesion.php';
+  include '../hf/a-header.php';
 ?>
         <!-- MVC -->
         <div class="row" style="padding: 1rem;">

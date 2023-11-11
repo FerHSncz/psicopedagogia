@@ -1,8 +1,8 @@
 <?php 
-    include '../config.php';
-    include 'php/sesion.php';
-    include 'php/accion-test2.php'; 
-    include 'recursos/header.php';
+	include '../php/config.php';
+	include '../php/sesion.php';
+	include '../php/accion-test2.php';
+	include '../hf/a-header.php';
 ?>
     <div class="container">
         <img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
