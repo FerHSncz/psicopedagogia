@@ -1,9 +1,15 @@
 <?php
-   // Configuración de la BD    
+   // Configuración de la BD local    
     $hostname = "localhost"; 
     $username = "root"; 
     $password = ""; 
     $dbname   = "psicopedagogia";
+
+    // Hosting de always data
+    // $hostname = "mysql-ferhsncz.alwaysdata.net"; 
+    // $username = "ferhsncz"; 
+    // $password = "lf3003hs"; 
+    // $dbname   = "ferhsncz_psicopedagogia";
     
    // Crear conexión a la BD  
     $con = new mysqli($hostname, $username, $password, $dbname); 

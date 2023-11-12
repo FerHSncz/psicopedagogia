@@ -1,4 +1,5 @@
 <?php
+    include_once("config.php");
     // Obtener los datos del formulario
     $nombre = $_POST['nombre'];
     $telefono = $_POST['telefono'];
@@ -15,11 +16,12 @@
     if ($con->query($consulta) === TRUE) {
         //echo 'Psicologo registrado correctamente.';
         // Alerta de script y regreso a index.html
-        echo '<script>alert("Psicologo registrado correctamente."); window.location.href = "index.php";</script>';
+        echo '<script>alert("Psicologo registrado correctamente."); window.history.back();</script>';
+        
     } else {
         //echo 'Error al registrar el Psicologo: ' . $con->error;
         // Alerta de script y regreso a index.html
-        echo '<script>alert("Error al registrar al Psicologo: ' . $con->error . '"); window.location.href = "index.php";</script>';
+        echo '<script>alert("Error al registrar al Psicologo: ' . $con->error . '); window.history.back();</script>';
     }
 
     // Cerrar la conexión
