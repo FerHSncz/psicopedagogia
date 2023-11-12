@@ -48,7 +48,7 @@ if (isset($_POST['registrar'])) {
 
 	if ($resultado==true) {
 		echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
-        echo "<script>window.history.back();</script>";           
+        header('../alumnos/index.php');
 	die();
 	}else{
 		echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";
