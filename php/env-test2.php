@@ -48,11 +48,11 @@ if (isset($_POST['registrar'])) {
 
 	if ($resultado==true) {
 		echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
-        echo "<script>window.location.href = 'index.php';</script>";           
+        echo "<script>window.history.back();</script>";           
 	die();
 	}else{
 		echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";
-		header ("index.php");
+		echo "<script>window.history.back();</script>";
 	} 
 }
 ?>

@@ -32,11 +32,11 @@
             $result = $con->query($query);
             if ($result==true) {
               echo "<script>alert('¡Los datos han sido guardados correctamente!');</script>";
-              echo "<script>window.location.href = 'index.php';</script>";           
+              echo "<script>window.history.back();</script>";           
               die();
             }else{
               echo "<script>alert('No estás registrado... Inténtalo de nuevo.');</script>";
-              echo "<script>window.location.href = 'index.php';</script>";
+              echo "<script>window.history.back();</script>";
             }   
           }
 ?>
