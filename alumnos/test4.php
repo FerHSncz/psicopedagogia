@@ -11,7 +11,7 @@
 			<img style=" margin:10px auto; display:block;" src="../img/UTCGG.png" width="55" height="50" align="">
 		</div>      	
 		<div class="container mt-2">
-			<form id="formulario" action="accion-test4.php" method="POST" autocomplete="off">
+			<form id="formulario" action="../php/env-test4.php" method="POST" autocomplete="off">
 				<div class=""> <!-- row <input type="submit" value="Siguiente" name="registro">-->
 					<style>
 						table tr:hover{
